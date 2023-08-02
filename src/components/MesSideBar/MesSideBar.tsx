@@ -30,8 +30,6 @@ export const CustomSideBar = styled(Drawer)(
   ({ theme, open }: { theme?: any; open?: boolean }) => ({
     width: open ? drawerWidth : shrunkDrawerWidth,
     flexShrink: 0,
-    display: "block",
-    variant: "permanent",
     marginTop: "64px",
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
@@ -40,6 +38,8 @@ export const CustomSideBar = styled(Drawer)(
     "& .MuiDrawer-paper": {
       width: open ? drawerWidth : shrunkDrawerWidth,
       // overflow: "hidden",
+      variant: "permanent",
+      display: "block",
       backgroundColor: "#F4F4F4",
       marginTop: "64px",
       marginLeft: 0,
@@ -351,12 +351,18 @@ const ExpandGroupChildren = (props: any) => {
 // export default MesSideBar;
 
 interface IProps {
-  children: JSX.Element;
-  props: any;
+  children?: JSX.Element;
+  variant?: string;
+  sx?: any;
+  open: Boolean;
 }
 
-const MesSideBar: FC<IProps> = ({ props, children }) => {
-  return <CustomSideBar {...props}>{children}</CustomSideBar>;
+const MesSideBar: FC<IProps> = ({ children, open, sx, variant }) => {
+  return (
+    <CustomSideBar {...sx} variant={variant} open={open}>
+      {children}
+    </CustomSideBar>
+  );
 };
 
 export default MesSideBar;

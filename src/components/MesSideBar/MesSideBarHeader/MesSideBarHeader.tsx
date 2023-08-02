@@ -4,15 +4,15 @@ import MenuButton from "../MenuButton";
 import { Typography, Stack } from "@mui/material";
 
 interface IProps {
-  handleDrawer: () => void;
-  children: string;
+  onClick?: () => void;
+  children?: string;
 }
 
-const MesSideBarHeader: FC<IProps> = ({ handleDrawer, children }) => {
+const MesSideBarHeader: FC<IProps> = ({ onClick, children }) => {
   return (
     <Stack direction={"row"} justifyContent={"start"} alignItems="center">
       <div>
-        <CustomIconButton onClick={handleDrawer}>
+        <CustomIconButton onClick={onClick}>
           <MenuButton />
         </CustomIconButton>
       </div>
