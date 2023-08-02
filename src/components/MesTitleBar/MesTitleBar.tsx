@@ -1,4 +1,10 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import React, {
+  Dispatch,
+  FC,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import {
   Stack,
   AppBar,
@@ -101,7 +107,7 @@ type Props = {
   brand: string;
 };
 
-const MesTitleBar = (props: Props) => {
+const MesTitleBar: FC<Props> = ({ version, brand }) => {
   return (
     <Stack>
       <CustomAppbar>
@@ -123,8 +129,8 @@ const MesTitleBar = (props: Props) => {
               // border: "1px orange solid",
             }}
           >
-            <Version>{props.version}</Version>
-            <BrandName>{props.brand}</BrandName>
+            <Version>{version}</Version>
+            <BrandName>{brand}</BrandName>
           </Box>
         </Stack>
       </CustomAppbar>
