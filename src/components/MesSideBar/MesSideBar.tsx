@@ -26,7 +26,7 @@ import MesSideBarClosed from "./MesSideBarClosedState/MesSideBarClosed";
 const drawerWidth: number = 280;
 const shrunkDrawerWidth: number = 64;
 
-const CustomSideBar = styled(Drawer)(
+export const CustomSideBar = styled(Drawer)(
   ({ theme, open }: { theme?: any; open?: boolean }) => ({
     width: open ? drawerWidth : shrunkDrawerWidth,
     flexShrink: 0,
@@ -324,22 +324,15 @@ const MesSideBar = (): JSX.Element => {
         display: "block",
       }}
     >
-      <Stack direction={"row"} justifyContent={"start"} alignItems="center">
-        <MesSideBarHeader handleDrawer={handleDrawer}>
-          Module Name
-        </MesSideBarHeader>
-      </Stack>
+      <MesSideBarHeader handleDrawer={handleDrawer}>
+        Module Name
+      </MesSideBarHeader>
       {!open ? (
-        <Stack>
-          {/* {NavMenus.map((item, index) => (
-            <List key={index} disablePadding>
-              <CustomIconHolder>{item.icon}</CustomIconHolder>
-            </List>
-          ))} */}
+        <>
           <MesSideBarClosed>{NavMenus[0].icon}</MesSideBarClosed>
           <MesSideBarClosed>{NavMenus[1].icon}</MesSideBarClosed>
           <MesSideBarClosed>{NavMenus[2].icon}</MesSideBarClosed>
-        </Stack>
+        </>
       ) : (
         <Stack width={280}>
           {NavMenus.map((item, index) => (

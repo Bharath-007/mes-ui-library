@@ -1,18 +1,16 @@
 import React, { FC } from "react";
 import CustomIconHolder from "../../utils/CustomIconHolder";
-import { List } from "@mui/material";
+import { List, Stack } from "@mui/material";
+
 interface IProps {
-  index?: any;
   children: any;
 }
 
-const MesSideBarClosed: FC<IProps> = ({ index, children }) => {
+const MesSideBarClosed: FC<IProps> = ({ children }) => {
   return (
-    <>
-      <List key={index} disablePadding>
-        <CustomIconHolder>{children}</CustomIconHolder>
-      </List>
-    </>
+    <Stack>
+      <CustomIconHolder>{children}</CustomIconHolder>
+    </Stack>
   );
 };
 

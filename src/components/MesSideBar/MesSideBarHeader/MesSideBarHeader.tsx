@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import CustomIconButton from "../../utils/CustomIconButton";
 import MenuButton from "../MenuButton";
-import { Typography } from "@mui/material";
+import { Typography, Stack } from "@mui/material";
 
 interface IProps {
   handleDrawer: () => void;
@@ -10,7 +10,7 @@ interface IProps {
 
 const MesSideBarHeader: FC<IProps> = ({ handleDrawer, children }) => {
   return (
-    <>
+    <Stack direction={"row"} justifyContent={"start"} alignItems="center">
       <div>
         <CustomIconButton onClick={handleDrawer}>
           <MenuButton />
@@ -32,7 +32,7 @@ const MesSideBarHeader: FC<IProps> = ({ handleDrawer, children }) => {
       >
         {children}
       </Typography>
-    </>
+    </Stack>
   );
 };
 
