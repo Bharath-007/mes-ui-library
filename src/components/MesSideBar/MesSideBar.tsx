@@ -26,7 +26,7 @@ import MesSideBarClosed from "./MesSideBarClosedState/MesSideBarClosed";
 const drawerWidth: number = 280;
 const shrunkDrawerWidth: number = 64;
 
-export const CustomSideBar = styled(Drawer)(
+export const MesSideBar = styled(Drawer)(
   ({ theme, open }: { theme?: any; open?: boolean }) => ({
     width: open ? drawerWidth : shrunkDrawerWidth,
     flexShrink: 0,
@@ -306,45 +306,45 @@ const ExpandGroupChildren = (props: any) => {
   );
 };
 
-const MesSideBar = (): JSX.Element => {
-  const [open, setOpen] = useState<boolean>(false);
-  const handleDrawer = (): void => {
-    setOpen(!open);
-  };
+// const MesSideBar = (): JSX.Element => {
+//   const [open, setOpen] = useState<boolean>(false);
+//   const handleDrawer = (): void => {
+//     setOpen(!open);
+//   };
 
-  return (
-    <CustomSideBar
-      variant="permanent"
-      open={open}
-      sx={{
-        "& .MuiDrawer-paper": {
-          marginTop: "64px",
-          marginLeft: "0px",
-        },
-        display: "block",
-      }}
-    >
-      <MesSideBarHeader handleDrawer={handleDrawer}>
-        Module Name
-      </MesSideBarHeader>
-      {!open ? (
-        <>
-          <MesSideBarClosed>{NavMenus[0].icon}</MesSideBarClosed>
-          <MesSideBarClosed>{NavMenus[1].icon}</MesSideBarClosed>
-          <MesSideBarClosed>{NavMenus[2].icon}</MesSideBarClosed>
-        </>
-      ) : (
-        <Stack width={280}>
-          {NavMenus.map((item, index) => (
-            <List key={index} disablePadding>
-              <ExpandGroup item={item} />
-            </List>
-          ))}
-          <Toolbar />
-        </Stack>
-      )}
-    </CustomSideBar>
-  );
-};
+//   return (
+//     <CustomSideBar
+//       variant="permanent"
+//       open={open}
+//       sx={{
+//         "& .MuiDrawer-paper": {
+//           marginTop: "64px",
+//           marginLeft: "0px",
+//         },
+//         display: "block",
+//       }}
+//     >
+//       <MesSideBarHeader handleDrawer={handleDrawer}>
+//         Module Name
+//       </MesSideBarHeader>
+//       {!open ? (
+//         <>
+//           <MesSideBarClosed>{NavMenus[0].icon}</MesSideBarClosed>
+//           <MesSideBarClosed>{NavMenus[1].icon}</MesSideBarClosed>
+//           <MesSideBarClosed>{NavMenus[2].icon}</MesSideBarClosed>
+//         </>
+//       ) : (
+//         <Stack width={280}>
+//           {NavMenus.map((item, index) => (
+//             <List key={index} disablePadding>
+//               <ExpandGroup item={item} />
+//             </List>
+//           ))}
+//           <Toolbar />
+//         </Stack>
+//       )}
+//     </CustomSideBar>
+//   );
+// };
 
-export default MesSideBar;
+// export default MesSideBar;
