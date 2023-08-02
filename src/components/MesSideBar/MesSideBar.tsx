@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import styled from "@emotion/styled";
 import {
   Stack,
@@ -26,10 +26,13 @@ import MesSideBarClosed from "./MesSideBarClosedState/MesSideBarClosed";
 const drawerWidth: number = 280;
 const shrunkDrawerWidth: number = 64;
 
-export const MesSideBar = styled(Drawer)(
+export const CustomSideBar = styled(Drawer)(
   ({ theme, open }: { theme?: any; open?: boolean }) => ({
     width: open ? drawerWidth : shrunkDrawerWidth,
     flexShrink: 0,
+    display: "block",
+    variant: "permanent",
+    marginTop: "64px",
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: 650,
@@ -40,8 +43,6 @@ export const MesSideBar = styled(Drawer)(
       backgroundColor: "#F4F4F4",
       marginTop: "64px",
       marginLeft: 0,
-      display: "block",
-      variant: "permanent",
       transition: theme.transitions.create("width", {
         easing: theme.transitions.easing.sharp,
         duration: 650,
@@ -348,3 +349,14 @@ const ExpandGroupChildren = (props: any) => {
 // };
 
 // export default MesSideBar;
+
+interface IProps {
+  children: JSX.Element;
+  props: any;
+}
+
+const MesSideBar: FC<IProps> = ({ props, children }) => {
+  return <CustomSideBar {...props}>{children}</CustomSideBar>;
+};
+
+export default MesSideBar;
