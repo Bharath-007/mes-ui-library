@@ -1,11 +1,11 @@
 import { Box, Icon } from "@mui/material";
-import React from "react";
+import React, { FC } from "react";
 
 type IconHolderProps = {
-  children: JSX.Element;
+  children?: JSX.Element | string;
 };
 
-const CustomIconHolder = (props: IconHolderProps) => {
+const CustomIconHolder: FC<IconHolderProps> = ({ children }) => {
   return (
     <Icon
       sx={{
@@ -17,7 +17,7 @@ const CustomIconHolder = (props: IconHolderProps) => {
         alignItems: "center",
       }}
     >
-      <Box>{props.children}</Box>
+      <Box>{children}</Box>
     </Icon>
   );
 };

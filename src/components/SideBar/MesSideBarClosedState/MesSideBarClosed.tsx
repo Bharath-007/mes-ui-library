@@ -1,9 +1,9 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import CustomIconHolder from "../../utils/CustomIconHolder";
 import { List, Stack } from "@mui/material";
 
 interface IProps {
-  children: any;
+  children?: ReactNode | ReactNode[] | JSX.Element | any;
 }
 
 const MesSideBarClosed: FC<IProps> = ({ children }) => {

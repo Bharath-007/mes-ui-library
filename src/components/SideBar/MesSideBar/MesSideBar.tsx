@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC, ReactNode, useEffect, useRef, useState } from "react";
 import styled from "@emotion/styled";
 import {
   Stack,
@@ -7,17 +7,10 @@ import {
   ListItemButton,
   ListItemText,
   Typography,
-  StyledEngineProvider,
   Box,
-  Fade,
-  Slide,
-  Grow,
-  Theme,
 } from "@mui/material";
 import Collapse from "@mui/material/Collapse";
 import CustomIconButton from "../../utils/CustomIconButton";
-import ExpandMoreIcon from "../../../Assets/ExpandMore.svg";
-import ExpandLessIcon from "../../../Assets/ExpandLess.svg";
 import MainMenuIcon from "../../../Assets/MainMenu.svg";
 import CustomIconHolder from "../../utils/CustomIconHolder";
 
@@ -171,71 +164,71 @@ const NavMenus = [
   },
 ];
 
-const ExpandGroup = (props: any) => {
-  const [expandGroup, setexpandGroup] = React.useState(null);
-  const handleClick = (id: any) => {
-    if (expandGroup === id) {
-      setexpandGroup(null);
-    } else {
-      setexpandGroup(id);
-    }
-  };
-  return (
-    <>
-      <ListItemButton
-        onClick={() => handleClick(props.item.mainId)}
-        sx={{
-          minHeight: "48px",
-          maxHeight: "48px",
-        }}
-        key={props.item.mainId + props.item.mainHeading}
-        style={{ borderBottom: "1px solid #EBEBEB", padding: 0 }}
-      >
-        <CustomIconHolder>{props.item.icon}</CustomIconHolder>
-        <ListItemText
-          disableTypography
-          primary={
-            <Typography
-              sx={{
-                fontWeight: 600,
-                color: "black",
-                fontSize: "14px",
-                fontFamily: "Segoe UI",
-                lineHeight: "18px",
-                letterSpacing: "0.16px",
-                textTransform: "capitalize",
-              }}
-            >
-              {props.item.mainHeading}
-            </Typography>
-          }
-        />
-        {expandGroup === props.item.mainId ? (
-          <Box sx={{ width: "24px", height: "48px" }}>
-            <Box sx={{ mx: "4px", my: "16px" }}>
-              <ExpandLessIcon />
-            </Box>
-          </Box>
-        ) : (
-          <Box sx={{ width: "24px", height: "48px" }}>
-            <Box sx={{ mx: "4px", my: "16px" }}>
-              <ExpandMoreIcon />
-            </Box>
-          </Box>
-        )}
-      </ListItemButton>
-      <Collapse
-        in={expandGroup === props.item.mainId}
-        timeout="auto"
-        unmountOnExit
-      >
-        {props.item.subMenus.map((children: any) => (
-          <ExpandGroupChildren key={children.subId} children={children} />
-        ))}
-      </Collapse>
-    </>
-  );
-};
+// const ExpandGroup = (props: any) => {
+//   const [expandGroup, setexpandGroup] = React.useState(null);
+//   const handleClick = (id: any) => {
+//     if (expandGroup === id) {
+//       setexpandGroup(null);
+//     } else {
+//       setexpandGroup(id);
+//     }
+//   };
+//   return (
+//     <>
+//       <ListItemButton
+//         onClick={() => handleClick(props.item.mainId)}
+//         sx={{
+//           minHeight: "48px",
+//           maxHeight: "48px",
+//         }}
+//         key={props.item.mainId + props.item.mainHeading}
+//         style={{ borderBottom: "1px solid #EBEBEB", padding: 0 }}
+//       >
+//         <CustomIconHolder>{props.item.icon}</CustomIconHolder>
+//         <ListItemText
+//           disableTypography
+//           primary={
+//             <Typography
+//               sx={{
+//                 fontWeight: 600,
+//                 color: "black",
+//                 fontSize: "14px",
+//                 fontFamily: "Segoe UI",
+//                 lineHeight: "18px",
+//                 letterSpacing: "0.16px",
+//                 textTransform: "capitalize",
+//               }}
+//             >
+//               {props.item.mainHeading}
+//             </Typography>
+//           }
+//         />
+//         {expandGroup === props.item.mainId ? (
+//           <Box sx={{ width: "24px", height: "48px" }}>
+//             <Box sx={{ mx: "4px", my: "16px" }}>
+//               <ExpandLessIcon />
+//             </Box>
+//           </Box>
+//         ) : (
+//           <Box sx={{ width: "24px", height: "48px" }}>
+//             <Box sx={{ mx: "4px", my: "16px" }}>
+//               <ExpandMoreIcon />
+//             </Box>
+//           </Box>
+//         )}
+//       </ListItemButton>
+//       <Collapse
+//         in={expandGroup === props.item.mainId}
+//         timeout="auto"
+//         unmountOnExit
+//       >
+//         {props.item.subMenus.map((children: any) => (
+//           <ExpandGroupChildren key={children.subId} children={children} />
+//         ))}
+//       </Collapse>
+//     </>
+//   );
+// };
 
 const ExpandGroupChildren = (props: any) => {
   const [active, setActive] = useState(false);
@@ -339,7 +332,7 @@ const ExpandGroupChildren = (props: any) => {
 // export default MesSideBar;
 
 interface IProps {
-  children?: JSX.Element;
+  children?: JSX.Element | ReactNode | ReactNode[];
   variant?: string;
   sx?: any;
   open: Boolean;
