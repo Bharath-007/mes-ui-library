@@ -3,16 +3,16 @@ import styled from "@emotion/styled";
 import {
   Stack,
   List,
+  Drawer,
   ListItemButton,
   ListItemText,
-  Drawer,
-  Toolbar,
   Typography,
   StyledEngineProvider,
   Box,
   Fade,
   Slide,
   Grow,
+  Theme,
 } from "@mui/material";
 import Collapse from "@mui/material/Collapse";
 import CustomIconButton from "../../utils/CustomIconButton";
@@ -21,11 +21,11 @@ import ExpandLessIcon from "../../../Assets/ExpandLess.svg";
 import MainMenuIcon from "../../../Assets/MainMenu.svg";
 import CustomIconHolder from "../../utils/CustomIconHolder";
 
-const drawerWidth: number = 280;
-const shrunkDrawerWidth: number = 64;
+const drawerWidth = 280;
+const shrunkDrawerWidth = 64;
 
 const CustomSideBar = styled(Drawer)(
-  ({ theme, open }: { theme?: any; open?: boolean }) => ({
+  ({ theme, open }: { theme: Theme; open: Boolean }) => ({
     width: open ? drawerWidth : shrunkDrawerWidth,
     flexShrink: 0,
     marginTop: "64px",
