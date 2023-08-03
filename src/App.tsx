@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Button, MesTextField } from "./components";
 import TitleBar from "./components/MesTitleBar/MesTitleBar";
-import MesSideBar from "./components/MesSideBar/MesSideBar";
-import Typography from "@mui/material/Typography";
-import { MesSideBarHeader } from "./components/MesSideBar/MesSideBarHeader";
+import MesSideBar from "./components/SideBar/MesSideBar";
+import { MesSideBarHeader } from "./components/SideBar/MesSideBarHeader";
 
 function App() {
   const [open, setOpen] = useState<boolean>(false);
