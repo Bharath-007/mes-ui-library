@@ -17,7 +17,7 @@ const MesSideBarHeader: FC<IProps> = ({ onClick, children }) => {
         </CustomIconButton>
       </div>
       <Typography
-        color="orange.main"
+        color="#F15D22"
         noWrap
         sx={{
           textAlign: "center",

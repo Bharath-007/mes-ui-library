@@ -27,7 +27,7 @@ const drawerWidth: number = 280;
 const shrunkDrawerWidth: number = 64;
 
 export const CustomSideBar = styled(Drawer)(
-  ({ theme, open }: { theme?: any; open?: boolean }) => ({
+  ({ theme, open }: { theme: any; open?: boolean }) => ({
     width: open ? drawerWidth : shrunkDrawerWidth,
     flexShrink: 0,
     marginTop: "64px",
