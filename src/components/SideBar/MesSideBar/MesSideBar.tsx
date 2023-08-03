@@ -24,7 +24,7 @@ import CustomIconHolder from "../../utils/CustomIconHolder";
 const drawerWidth: number = 280;
 const shrunkDrawerWidth: number = 64;
 
-export const CustomSideBar = styled(Drawer)(
+const CustomSideBar = styled(Drawer)(
   ({ theme, open }: { theme: any; open?: boolean }) => ({
     width: open ? drawerWidth : shrunkDrawerWidth,
     flexShrink: 0,
