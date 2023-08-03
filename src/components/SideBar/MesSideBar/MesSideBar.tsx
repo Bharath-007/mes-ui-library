@@ -25,11 +25,11 @@ const drawerWidth = 280;
 const shrunkDrawerWidth = 64;
 
 const CustomSideBar = styled(Drawer)(
-  ({ theme, open }: { theme: Theme; open: Boolean }) => ({
+  ({ theme, open }: { theme?: Theme; open?: Boolean }) => ({
     width: open ? drawerWidth : shrunkDrawerWidth,
     flexShrink: 0,
     marginTop: "64px",
-    transition: theme.transitions.create("width", {
+    transition: theme?.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
       duration: 650,
     }),
@@ -41,10 +41,11 @@ const CustomSideBar = styled(Drawer)(
       backgroundColor: "#F4F4F4",
       marginTop: "64px",
       marginLeft: 0,
-      transition: theme.transitions.create("width", {
-        easing: theme.transitions.easing.sharp,
-        duration: 650,
-      }),
+      transition:
+        theme?.transitions.create("width", {
+          easing: theme.transitions.easing.sharp,
+          duration: 650,
+        }) ?? "null",
     },
   })
 );
