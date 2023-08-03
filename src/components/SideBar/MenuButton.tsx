@@ -6,10 +6,9 @@ import { Box } from "@mui/material";
 
 const HoverableBox = styled(Box)`
   cursor: pointer; /* Add a cursor change on hover */
-  transition: transform 0.3s ease; /* Add a smooth transition effect */
-
+  transition: transform 0.75s ease; /* Add a smooth transition effect */
   &:hover {
-    transform: scale(1.1); /* Apply a scale transformation on hover */
+    transform: translateX(1px);
   }
 `;
 
