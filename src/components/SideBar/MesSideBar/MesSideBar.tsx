@@ -29,10 +29,10 @@ const CustomSideBar = styled(Drawer)(
     width: open ? drawerWidth : shrunkDrawerWidth,
     flexShrink: 0,
     marginTop: "64px",
-    // transition: theme.transitions.create("width", {
-    //   easing: theme.transitions.easing.sharp,
-    //   duration: 650,
-    // }),
+    transition: theme.transitions.create("width", {
+      easing: theme.transitions.easing.sharp,
+      duration: 650,
+    }),
     "& .MuiDrawer-paper": {
       width: open ? drawerWidth : shrunkDrawerWidth,
       // overflow: "hidden",
@@ -41,10 +41,10 @@ const CustomSideBar = styled(Drawer)(
       backgroundColor: "#F4F4F4",
       marginTop: "64px",
       marginLeft: 0,
-      // transition: theme.transitions.create("width", {
-      //   easing: theme.transitions.easing.sharp,
-      //   duration: 650,
-      // }),
+      transition: theme.transitions.create("width", {
+        easing: theme.transitions.easing.sharp,
+        duration: 650,
+      }),
     },
   })
 );

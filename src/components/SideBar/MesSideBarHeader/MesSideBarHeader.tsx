@@ -6,11 +6,19 @@ import { Typography, Stack } from "@mui/material";
 interface IProps {
   onClick?: () => void;
   children?: string;
+  sx?: any;
+  style?: any;
 }
 
-const MesSideBarHeader: FC<IProps> = ({ onClick, children }) => {
+const MesSideBarHeader: FC<IProps> = ({ onClick, children, sx, style }) => {
   return (
-    <Stack direction={"row"} justifyContent={"start"} alignItems="center">
+    <Stack
+      direction={"row"}
+      justifyContent={"start"}
+      alignItems="center"
+      {...sx}
+      {...style}
+    >
       <div>
         <CustomIconButton onClick={onClick}>
           <MenuButton />
