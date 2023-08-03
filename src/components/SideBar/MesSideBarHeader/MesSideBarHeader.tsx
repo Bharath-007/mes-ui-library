@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 import CustomIconButton from "../../utils/CustomIconButton";
 import MenuButton from "../MenuButton";
 import { Typography, Stack } from "@mui/material";
@@ -44,4 +44,4 @@ const MesSideBarHeader: FC<IProps> = ({ onClick, children, sx, style }) => {
   );
 };
 
-export default MesSideBarHeader;
+export default memo(MesSideBarHeader);

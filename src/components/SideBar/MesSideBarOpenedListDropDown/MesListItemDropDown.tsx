@@ -9,7 +9,7 @@ import {
 import CustomIconHolder from "../../utils/CustomIconHolder";
 import ExpandMoreIcon from "../../../Assets/ExpandMore.svg";
 import ExpandLessIcon from "../../../Assets/ExpandLess.svg";
-import { FC, ReactNode } from "react";
+import { FC, ReactNode, memo } from "react";
 
 interface IProps {
   id?: string | number;
@@ -78,4 +78,4 @@ const MesListItemDropDown: FC<IProps> = ({
   );
 };
 
-export default MesListItemDropDown;
+export default memo(MesListItemDropDown);

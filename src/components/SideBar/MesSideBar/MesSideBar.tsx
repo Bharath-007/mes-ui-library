@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect, useRef, useState } from "react";
+import React, { FC, ReactNode, memo, useEffect, useRef, useState } from "react";
 import styled from "@emotion/styled";
 import {
   Stack,
@@ -346,4 +346,4 @@ const MesSideBar: FC<IProps> = ({ children, open, sx, variant }) => {
   );
 };
 
-export default MesSideBar;
+export default memo(MesSideBar);

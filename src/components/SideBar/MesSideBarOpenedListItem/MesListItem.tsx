@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, memo } from "react";
 import { List, ListItemButton, ListItemText, Typography } from "@mui/material";
 
 interface IProps {
@@ -52,4 +52,4 @@ const MesListItem: FC<IProps> = ({ id, label, active, onClick }) => {
   );
 };
 
-export default MesListItem;
+export default memo(MesListItem);

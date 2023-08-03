@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, memo } from "react";
 import CustomIconHolder from "../../utils/CustomIconHolder";
 import { List, Stack } from "@mui/material";
 
@@ -14,4 +14,4 @@ const MesSideBarClosed: FC<IProps> = ({ children }) => {
   );
 };
 
-export default MesSideBarClosed;
+export default memo(MesSideBarClosed);
