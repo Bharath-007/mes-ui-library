@@ -16,9 +16,9 @@ import {
 } from "@mui/material";
 import Collapse from "@mui/material/Collapse";
 import CustomIconButton from "../../utils/CustomIconButton";
-import ExpandMoreIcon from "../../Assets/ExpandMore.svg";
-import ExpandLessIcon from "../../Assets/ExpandLess.svg";
-import MainMenuIcon from "../../Assets/MainMenu.svg";
+import ExpandMoreIcon from "../../../Assets/ExpandMore.svg";
+import ExpandLessIcon from "../../../Assets/ExpandLess.svg";
+import MainMenuIcon from "../../../Assets/MainMenu.svg";
 import CustomIconHolder from "../../utils/CustomIconHolder";
 
 const drawerWidth: number = 280;
