@@ -2,6 +2,8 @@ import { useState } from "react";
 import {
   Button,
   MesDropDown,
+  MesRadioController,
+  MesRadioLabel,
   MesSideBarClosed,
   MesTextField,
 } from "./components";
@@ -14,6 +16,9 @@ import MesListItemDropDown from "./components/SideBar/MesSideBarOpenedListDropDo
 import MesListItem from "./components/SideBar/MesSideBarOpenedListItem/MesListItem";
 import { Stack, Grid } from "@mui/material";
 import React from "react";
+import MesScanner from "./components/MesScanner/MesScanner";
+import MesCheckBox from "./components/MesCheckboxButton/MesCheckBox/MesCheckbox";
+import MesCheckboxController from "./components/MesCheckboxButton/MesCheckBoxController/MesCheckboxController";
 
 function App() {
   const [open, setOpen] = useState<boolean>(false);
@@ -47,6 +52,12 @@ function App() {
     { name: "six", value: "6" },
     { name: "sev", value: "7" },
   ];
+
+  // scanner
+  const [name, setName] = React.useState("");
+
+  // Radio Button
+  const [value, setvalue] = useState(false);
 
   return (
     <div className="App">
@@ -171,6 +182,7 @@ function App() {
           spacing={1}
           direction="row"
           justifyContent="flex-start"
+          rowSpacing={3}
           alignItems="flex-start"
           alignContent="stretch"
           wrap="wrap"
@@ -179,10 +191,10 @@ function App() {
             paddingLeft: "64px",
           }}
         >
-          <Grid item>
+          <Grid item xs={4}>
             <MesTextField label="Machine ID" placeholder="Enter Machine ID" />
           </Grid>
-          <Grid item>
+          <Grid item xs={4}>
             <MesDropDown
               label="Age"
               placeholder="Dropdown Menu Label"
@@ -190,6 +202,34 @@ function App() {
               onChange={handleChange}
               options={persons}
             />
+          </Grid>
+          <Grid item xs={4}>
+            <MesScanner
+              label="Scan Data Label"
+              placeholder="Scan Data Label"
+              value={name}
+              onChange={(e: any) => setName(e.target.value)}
+              onClick={() => setName("")}
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <MesRadioLabel label="Toggle">
+              <MesRadioController
+                labelright="off"
+                labelleft="on"
+                onChange={() => setvalue(!value)}
+              />
+            </MesRadioLabel>
+          </Grid>
+          <Grid item>
+            <MesCheckBox
+              label="checkbox label"
+              value={value}
+              onChange={handleChange}
+            >
+              <MesCheckboxController value="Unchecked" label="Unchecked" />
+              <MesCheckboxController value="Checked" label="Checked" />
+            </MesCheckBox>
           </Grid>
         </Grid>
       </Stack>

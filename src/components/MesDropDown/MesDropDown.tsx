@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -158,7 +158,12 @@ function MesDropDown(props: any) {
         </CustomSelect>
       </FormControl>
       <SideIconButton
-        sx={{ backgroundColor: "#D6D6D6" }}
+        sx={{
+          backgroundColor: "#D6D6D6",
+          "&:hover": {
+            backgroundColor: "#D6D6D6",
+          },
+        }}
         onClick={handleToggle}
       >
         {!isOpen ? <DropDownOpen /> : <DropDownClose />}
@@ -229,4 +234,4 @@ const MenuItemList = (props: any) => {
   );
 };
 
-export default MesDropDown;
+export default memo(MesDropDown);
