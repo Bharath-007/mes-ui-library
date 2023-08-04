@@ -17,8 +17,8 @@ import MesListItem from "./components/SideBar/MesSideBarOpenedListItem/MesListIt
 import { Stack, Grid } from "@mui/material";
 import React from "react";
 import MesScanner from "./components/MesScanner/MesScanner";
-import MesCheckBox from "./components/MesCheckboxButton/MesCheckBox/MesCheckbox";
-import MesCheckboxController from "./components/MesCheckboxButton/MesCheckBoxController/MesCheckboxController";
+import MesCheckBox from "./components/MesCheckboxButton/MesCheckBox";
+import MesCheckboxController from "./components/MesCheckboxButton/MesCheckBoxController/MesCheckBoxController";
 
 function App() {
   const [open, setOpen] = useState<boolean>(false);
@@ -177,7 +177,7 @@ function App() {
             </MesSideBarOpened>
           )}
         </MesSideBar>
-        <Grid
+        {/* <Grid
           container
           spacing={1}
           direction="row"
@@ -231,7 +231,7 @@ function App() {
               <MesCheckboxController value="Checked" label="Checked" />
             </MesCheckBox>
           </Grid>
-        </Grid>
+        </Grid> */}
       </Stack>
     </div>
   );
