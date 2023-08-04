@@ -48,7 +48,7 @@ const SideIconButton = styled(IconButton)(({ theme }) => ({
   padding: `${0}`,
   width: 50,
   height: 50,
-  bgcolor: "fieldBorder.main",
+  bgcolor: "#D6D6D6",
   borderRadius: "5px",
 }));
 
