@@ -43,11 +43,13 @@ const CustomSelect = styled(Select)(({ theme }) => ({
   ".MuiRadio-root": {
     display: "none",
   },
-  "& .MuiOutlinedInput-root": {
-    "&.Mui-focused fieldset": {
-      borderColor: "#002856",
+
+  "&.Mui-focused": {
+    ".MuiOutlinedInput-notchedOutline": {
+      borderColor: "#002856!important",
     },
   },
+
   ".MuiSelect-select": {
     // backgroundColor: "red",
     padding: "13.5px 17px",
