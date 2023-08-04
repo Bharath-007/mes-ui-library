@@ -1,7 +1,7 @@
 import { TextField, styled, Box, Stack, IconButton } from "@mui/material";
-import React, { useState } from "react";
-import { ReactComponent as ScannerIcon } from "../Assets/SkidScan.svg";
-import { ReactComponent as ClearIcon } from "../Assets/SkidClear.svg";
+import React, { FC, memo, useState } from "react";
+import ScannerIcon from "../../Assets/SkidScan.svg";
+import ClearIcon from "../../Assets/SkidClear.svg";
 
 const CustomMesTextField = styled(TextField)({
   width: "400px",
@@ -52,7 +52,7 @@ const SideIconButton = styled(IconButton)(({ theme }) => ({
   borderRadius: "5px",
 }));
 
-const MesScanData = (props) => {
+const MesScanner: FC<any> = (props) => {
   const [touched, setTouched] = useState(false);
 
   const handleFocus = () => {
@@ -92,4 +92,4 @@ const MesScanData = (props) => {
   );
 };
 
-export default MesScanData;
+export default MesScanner;
