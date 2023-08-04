@@ -18,8 +18,13 @@ const CustomMesTextField = styled(TextField)({
     fontSize: "20px",
     fontWeight: 400,
     lineHeight: "18px",
+    fontStyle: "normal",
     textTransform: "capitalize",
     color: "#000",
+    letterSpacing: "1px",
+    fontFamily: "Segoe UI",
+    // color: " #A9A9A9",
+    opacity: 9,
   },
 });
 
@@ -67,6 +72,7 @@ const MesTextField = (props: any) => {
           paddingInlineEnd: "55px",
           fontFamily: "Segoe UI",
           // color: "#A9A9A9",
+          letterSpacing: "1px",
           color: "black",
         },
       }}
