@@ -2,7 +2,6 @@ import { TextField, styled } from "@mui/material";
 import React, { useState } from "react";
 
 const CustomMesTextField = styled(TextField)({
-  width: "455px",
   height: "50px",
   "label.MuiInputLabel-outlined": {
     color: "#F15D22 !important",
@@ -80,7 +79,10 @@ const MesTextField = (props: any) => {
       variant="outlined"
       onFocus={handleFocus}
       onBlur={handleBlur}
-      sx={touched || (props.value !== "" && borderLess)}
+      sx={
+        (touched || (props.value !== "" && borderLess),
+        { width: props.width ?? "455px" })
+      }
     ></CustomMesTextField>
   );
 };
