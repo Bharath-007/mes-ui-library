@@ -1,4 +1,4 @@
-import { TextField, styled } from "@mui/material";
+import { Box, TextField, styled } from "@mui/material";
 import React, { useState } from "react";
 
 const CustomMesTextField = styled(TextField)({
@@ -59,29 +59,30 @@ const MesTextField = (props: any) => {
   };
 
   return (
-    <CustomMesTextField
-      {...props}
-      InputLabelProps={{
-        shrink: true,
-        style: { visibility: "visible" },
-      }}
-      inputProps={{
-        style: {
-          paddingInlineStart: "17px",
-          paddingInlineEnd: "55px",
-          fontFamily: "Segoe UI",
-          // color: "#A9A9A9",
-          letterSpacing: "1px",
-          color: "black",
-        },
-      }}
-      label={touched || props.value !== "" ? props.label : ""}
-      variant="outlined"
-      onFocus={handleFocus}
-      onBlur={handleBlur}
-      style={props.width ? props.width : "455px"}
-      sx={touched || (props.value !== "" && borderLess)}
-    ></CustomMesTextField>
+    <Box style={props.width ? props.width : "455px"}>
+      <CustomMesTextField
+        {...props}
+        InputLabelProps={{
+          shrink: true,
+          style: { visibility: "visible" },
+        }}
+        inputProps={{
+          style: {
+            paddingInlineStart: "17px",
+            paddingInlineEnd: "55px",
+            fontFamily: "Segoe UI",
+            // color: "#A9A9A9",
+            letterSpacing: "1px",
+            color: "black",
+          },
+        }}
+        label={touched || props.value !== "" ? props.label : ""}
+        variant="outlined"
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        sx={touched || (props.value !== "" && borderLess)}
+      ></CustomMesTextField>
+    </Box>
   );
 };
 
