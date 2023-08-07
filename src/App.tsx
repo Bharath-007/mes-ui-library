@@ -195,7 +195,7 @@ function App() {
             <MesTextField
               label="Machine ID"
               placeholder="Enter Machine ID"
-              width="455"
+              value=""
             />
           </Grid>
           <Grid item xs={4}>

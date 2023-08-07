@@ -48,7 +48,6 @@ const borderLess = {
 
 const MesTextField = (props: any) => {
   const [touched, setTouched] = useState(false);
-  const typing = props.value;
 
   const handleFocus = () => {
     setTouched(true);
@@ -79,6 +78,7 @@ const MesTextField = (props: any) => {
       variant="outlined"
       onFocus={handleFocus}
       onBlur={handleBlur}
+      style={{ width: props.width ? props.width : "455px" }}
       sx={touched || (props.value !== "" && borderLess)}
     ></CustomMesTextField>
   );
