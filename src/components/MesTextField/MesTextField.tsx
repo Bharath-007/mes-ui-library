@@ -79,10 +79,8 @@ const MesTextField = (props: any) => {
       variant="outlined"
       onFocus={handleFocus}
       onBlur={handleBlur}
-      sx={
-        (touched || (props.value !== "" && borderLess),
-        { width: props.width ?? "455px" })
-      }
+      style={props.width ? props.width : "455px"}
+      sx={touched || (props.value !== "" && borderLess)}
     ></CustomMesTextField>
   );
 };
