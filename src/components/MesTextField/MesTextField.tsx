@@ -59,7 +59,7 @@ const MesTextField = (props: any) => {
   };
 
   return (
-    <Box style={props.width ? props.width : "455px"}>
+    <Box style={{ width: 200 }}>
       <CustomMesTextField
         {...props}
         InputLabelProps={{
