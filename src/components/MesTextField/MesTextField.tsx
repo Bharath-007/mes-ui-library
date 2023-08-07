@@ -59,30 +59,28 @@ const MesTextField = (props: any) => {
   };
 
   return (
-    <Box style={{ width: 200 }}>
-      <CustomMesTextField
-        {...props}
-        InputLabelProps={{
-          shrink: true,
-          style: { visibility: "visible" },
-        }}
-        inputProps={{
-          style: {
-            paddingInlineStart: "17px",
-            paddingInlineEnd: "55px",
-            fontFamily: "Segoe UI",
-            // color: "#A9A9A9",
-            letterSpacing: "1px",
-            color: "black",
-          },
-        }}
-        label={touched || props.value !== "" ? props.label : ""}
-        variant="outlined"
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        sx={touched || (props.value !== "" && borderLess)}
-      ></CustomMesTextField>
-    </Box>
+    <CustomMesTextField
+      {...props}
+      InputLabelProps={{
+        shrink: true,
+        style: { visibility: "visible" },
+      }}
+      inputProps={{
+        style: {
+          paddingInlineStart: "17px",
+          paddingInlineEnd: "55px",
+          fontFamily: "Segoe UI",
+          // color: "#A9A9A9",
+          letterSpacing: "1px",
+          color: "black",
+        },
+      }}
+      label={touched || props.value !== "" ? props.label : ""}
+      variant="outlined"
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+      sx={touched || (props.value !== "" && borderLess)}
+    ></CustomMesTextField>
   );
 };
 

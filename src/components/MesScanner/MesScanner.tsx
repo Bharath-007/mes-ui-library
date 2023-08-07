@@ -84,6 +84,7 @@ const MesScanner: FC<any> = (props) => {
         variant="outlined"
         onFocus={handleFocus}
         onBlur={handleBlur}
+        style={{ width: props.width ? props.width : "455px" }}
       ></CustomMesTextField>
       <SideIconButton onClick={props.onClick}>
         {!props.value ? <ScannerIcon /> : <ClearIcon />}

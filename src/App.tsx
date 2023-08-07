@@ -177,7 +177,7 @@ function App() {
             </MesSideBarOpened>
           )}
         </MesSideBar>
-        {/* <Grid
+        <Grid
           container
           spacing={1}
           direction="row"
@@ -192,7 +192,11 @@ function App() {
           }}
         >
           <Grid item xs={4}>
-            <MesTextField label="Machine ID" placeholder="Enter Machine ID" />
+            <MesTextField
+              label="Machine ID"
+              placeholder="Enter Machine ID"
+              width="455"
+            />
           </Grid>
           <Grid item xs={4}>
             <MesDropDown
@@ -231,7 +235,7 @@ function App() {
               <MesCheckboxController value="Checked" label="Checked" />
             </MesCheckBox>
           </Grid>
-        </Grid> */}
+        </Grid>
       </Stack>
     </div>
   );
