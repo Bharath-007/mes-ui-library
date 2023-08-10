@@ -19,6 +19,7 @@ import React from "react";
 import MesScanner from "./components/MesScanner/MesScanner";
 import MesCheckBox from "./components/MesCheckboxButton/MesCheckBox";
 import MesCheckboxController from "./components/MesCheckboxButton/MesCheckBoxController/MesCheckBoxController";
+import HomePage from "./HomePage";
 
 function App() {
   const [open, setOpen] = useState<boolean>(false);
@@ -60,8 +61,8 @@ function App() {
   const [value, setvalue] = useState(false);
 
   return (
-    <div className="App">
-      <Stack>
+    <>
+      {/* <Stack>
         <TitleBar version="cantier version MES 4.0" brand="Mes Brand" />
         <MesSideBar variant="permanent" open={open}>
           <MesSideBarHeader onClick={handleDrawer}>
@@ -236,8 +237,9 @@ function App() {
             </MesCheckBox>
           </Grid>
         </Grid>
-      </Stack>
-    </div>
+      </Stack> */}
+      <HomePage />
+    </>
   );
 }
 
