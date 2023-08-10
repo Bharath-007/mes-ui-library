@@ -1,2 +1,2 @@
-export { default as MesQuicklinkButton } from "./MesQuicklinkButton";
+export * from "./MesQuicklinkButton";
 export { default } from "./MesQuiklinks";
