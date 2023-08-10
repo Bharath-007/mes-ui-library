@@ -1,11 +1,17 @@
 import { Grid, IconButton, Stack, Typography } from "@mui/material";
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, useState } from "react";
 
 interface IModuleButtonProps {
-  icon?: ReactNode;
+  icon: ReactNode;
+  hoverIcon?: ReactNode;
   children: string;
 }
-const MesModuleButton: FC<IModuleButtonProps> = ({ icon, children }) => {
+const MesModuleButton: FC<IModuleButtonProps> = ({
+  icon,
+  children,
+  hoverIcon,
+}) => {
+  const [hover, setHover] = useState(false);
   return (
     <Grid item>
       <Stack>
@@ -16,12 +22,24 @@ const MesModuleButton: FC<IModuleButtonProps> = ({ icon, children }) => {
             width: "100px",
             height: "100px",
             borderRadius: "10px",
-            backgroundColor: " #F2F2F2",
+
             boxShadow: " 0px 0px 20px 0px rgba(117, 117, 117, 0.25)",
             marginBottom: "8px",
           }}
+          sx={{
+            backgroundColor: " #F2F2F2",
+            "&:hover": {
+              backgroundColor: "#F15D22",
+            },
+            "&:focus": {
+              backgroundColor: "#F15D22",
+            },
+          }}
+          disableTouchRipple
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
         >
-          {icon}
+          {hover ? hoverIcon ?? icon : icon}
         </IconButton>
         <Typography
           alignItems={"center"}

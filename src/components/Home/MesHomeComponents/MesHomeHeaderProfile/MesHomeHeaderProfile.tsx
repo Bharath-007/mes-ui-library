@@ -1,8 +1,8 @@
 import { Avatar } from "@mui/material";
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 
 interface IMesProfile {
-  src?: string;
+  src?: ReactNode | any;
 }
 const MesHomeHeaderProfile: FC<IMesProfile> = ({ src }) => {
   return (
@@ -13,7 +13,7 @@ const MesHomeHeaderProfile: FC<IMesProfile> = ({ src }) => {
       sx={{
         width: "30px",
         height: "30px",
-        border: "1px solid #002856",
+        border: "0px solid #002856",
         mt: "10px",
         ml: "16.2px",
       }}
