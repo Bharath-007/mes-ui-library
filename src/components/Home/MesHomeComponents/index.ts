@@ -8,3 +8,4 @@ export { default as MesHomeHeaderInfo } from "./MesHomeHeaderInfo";
 export { default as MesHomeHeaderNotifications } from "./MesHomeHeaderNotifications";
 export { default as MesHomeHeaderProfile } from "./MesHomeHeaderProfile";
 export { default as MesHomeHeaderSettings } from "./MesHomeHeaderSettings";
+export * from "./MesQuiklinks";
