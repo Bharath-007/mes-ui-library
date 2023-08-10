@@ -1,9 +1,8 @@
 export { default as MesFAQ } from "./MesFAQ";
-export { default as MesModules } from "./MesModules";
+export * from "./MesModule";
 export { default as MesPrivacyPolicy } from "./MesPrivacyPolicy";
 export { default as MesSupport } from "./MesSupport";
-export { default as MesQuicklinks } from "./MesQuiklinks";
-export { default as MesQuicklinkButton } from "./MesQuiklinks/MesQuicklinkButton";
+export * from "./MesQuiklink";
 export { default as MesHomeHeader } from "./MesHomeHeader";
 export { default as MesHomeHeaderInfo } from "./MesHomeHeaderInfo";
 export { default as MesHomeHeaderNotifications } from "./MesHomeHeaderNotifications";
