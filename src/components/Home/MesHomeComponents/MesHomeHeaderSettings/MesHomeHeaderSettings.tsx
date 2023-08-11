@@ -10,28 +10,26 @@ import {
   Typography,
   styled,
 } from "@mui/material";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import ToggleIcon from "../../../../Assets/ThemeToggle.svg";
 import SettingsIcon from "../../../../Assets/HomeSettings.svg";
+import MesLayoutSwitcher from "../../../MesLayoutSwitcher/MesLayoutSwitcher/MesLayoutSwitcher";
 
 interface ISettings {
   onClick?: React.MouseEvent<MouseEvent> | any;
-  props: any;
+  props?: any;
 }
 
 const MesHomeHeaderSettings: FC<ISettings> = ({ props }) => {
-  const [showMenu, setshowMenu] = React.useState(null);
-
-  // const open = Boolean(showMenu);
-
-  // const handleClick = (event: any) => {
-  //   setshowMenu(event.currentTarget);
-  // };
+  const [openLayout, setLayoutOpen] = useState(true);
 
   const handleClose = () => {
-    setshowMenu(null);
+    setLayoutOpen(false);
+  };
+  const handleClick = () => {
+    setLayoutOpen((prev) => !prev);
   };
 
   return (
@@ -112,7 +110,7 @@ const MesHomeHeaderSettings: FC<ISettings> = ({ props }) => {
                 />
               </Stack>
               <MenuItem
-                onClick={handleClose}
+                onClick={handleClick}
                 sx={{ p: 0, mt: 1, pl: 1, borderRadius: "3px" }}
                 disableRipple
               >
@@ -127,6 +125,7 @@ const MesHomeHeaderSettings: FC<ISettings> = ({ props }) => {
                   Layout Options
                 </Typography>
               </MenuItem>
+              <MesLayoutSwitcher open={openLayout} handleClose={handleClose} />
             </Menu>
           </>
         )}
@@ -148,7 +147,7 @@ const IOSSwitch = styled((props: any) => (
     marginLeft: 1.4,
     transitionDuration: "300ms",
     "&.Mui-checked": {
-      transform: "translateX(25px)",
+      transform: "translateX(24px)",
       "& + .MuiSwitch-track": {
         backgroundColor: "#EFEFEF",
         opacity: 1,
@@ -181,7 +180,7 @@ const IOSSwitch = styled((props: any) => (
     },
     "&:after": {
       content: '"ON"',
-      transform: "translateX(10%)",
+      transform: "translateX(35%)",
       fontSize: 7,
       color: "#B0B0B0",
       margin: 0,
@@ -190,7 +189,7 @@ const IOSSwitch = styled((props: any) => (
   "& .MuiSwitch-track": {
     borderRadius: 8,
     // border: "1px solid red",
-    boxShadow: "0px 0px 6px 0px rgba(0, 0, 0, 0.3) inset",
+    boxShadow: "0px 0px 6px 0px rgba(0, 0, 0, 0.30) inset",
     backgroundColor: "#ffffff",
     opacity: 1,
     transition: theme.transitions.create(["background-color"], {
