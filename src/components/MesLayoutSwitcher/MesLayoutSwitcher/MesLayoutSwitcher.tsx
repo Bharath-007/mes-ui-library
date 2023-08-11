@@ -23,6 +23,7 @@ import {
   Stack,
   Typography,
   ButtonGroup,
+  Fade,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -33,6 +34,7 @@ interface ILayoutProps {
 
 const MesLayoutSwitcher: FC<ILayoutProps> = ({ open, handleClose }) => {
   const [close, setClose] = useState(false);
+  const [layout, setLayout] = useState(1);
   return (
     <Dialog
       open={open}
@@ -107,15 +109,28 @@ const MesLayoutSwitcher: FC<ILayoutProps> = ({ open, handleClose }) => {
               ml: "51px",
             }}
           >
-            <MesLayoutButton name="Layout 1">
-              <MesLayout1 />
-            </MesLayoutButton>
-            <MesLayoutButton name="Layout 2">
-              <MesLayout2 />
-            </MesLayoutButton>
-            <MesLayoutButton name="Layout 3">
-              <MesLayout3 />
-            </MesLayoutButton>
+            {layout === 1 ? (
+              <>
+                <MesLayoutButton name="Layout 1">
+                  <MesLayout1 />
+                </MesLayoutButton>
+                <MesLayoutButton name="Layout 2">
+                  <MesLayout2 />
+                </MesLayoutButton>
+                <MesLayoutButton name="Layout 3">
+                  <MesLayout3 />
+                </MesLayoutButton>
+              </>
+            ) : (
+              <>
+                <MesLayoutButton name="Layout 4">
+                  <MesLayout4 />
+                </MesLayoutButton>
+                <MesLayoutButton name="Layout 5">
+                  <MesLayout5 />
+                </MesLayoutButton>
+              </>
+            )}
           </Stack>
           {/* switcher buttons */}
           <Stack
@@ -134,6 +149,8 @@ const MesLayoutSwitcher: FC<ILayoutProps> = ({ open, handleClose }) => {
                   backgroundColor: "#002856",
                 },
               }}
+              value={layout}
+              onClick={() => setLayout(1)}
             ></IconButton>
             <IconButton
               sx={{
@@ -144,6 +161,8 @@ const MesLayoutSwitcher: FC<ILayoutProps> = ({ open, handleClose }) => {
                   backgroundColor: "#002856",
                 },
               }}
+              value={layout}
+              onClick={() => setLayout(2)}
             ></IconButton>
           </Stack>
         </DialogContent>
@@ -156,6 +175,7 @@ interface ILayout {
   children: ReactNode;
   name: string;
 }
+
 const MesLayoutButton: FC<ILayout> = ({ children, name }) => {
   return (
     <Stack>

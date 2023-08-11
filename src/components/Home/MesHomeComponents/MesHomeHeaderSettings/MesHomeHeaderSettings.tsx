@@ -23,7 +23,7 @@ interface ISettings {
 }
 
 const MesHomeHeaderSettings: FC<ISettings> = ({ props }) => {
-  const [openLayout, setLayoutOpen] = useState(true);
+  const [openLayout, setLayoutOpen] = useState(false);
 
   const handleClose = () => {
     setLayoutOpen(false);
