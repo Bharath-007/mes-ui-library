@@ -6,3 +6,4 @@ export { default as MesScanner } from "./MesScanner";
 export * from "./SideBar";
 export * from "./MesRadioButton";
 export * from "./MesCheckboxButton";
+export * from "./Home";

@@ -1,21 +1,202 @@
-import { IconButton } from "@mui/material";
+import {
+  FormControlLabel,
+  IconButton,
+  ListItemIcon,
+  Menu,
+  MenuItem,
+  Stack,
+  Switch,
+  Tooltip,
+  Typography,
+  styled,
+} from "@mui/material";
 import React, { FC } from "react";
+
+import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
+import ToggleIcon from "../../../../Assets/ThemeToggle.svg";
 import SettingsIcon from "../../../../Assets/HomeSettings.svg";
 
 interface ISettings {
   onClick?: React.MouseEvent<MouseEvent> | any;
+  props: any;
 }
 
-const MesHomeHeaderSettings: FC<ISettings> = ({ onClick }) => {
+const MesHomeHeaderSettings: FC<ISettings> = ({ props }) => {
+  const [showMenu, setshowMenu] = React.useState(null);
+
+  // const open = Boolean(showMenu);
+
+  // const handleClick = (event: any) => {
+  //   setshowMenu(event.currentTarget);
+  // };
+
+  const handleClose = () => {
+    setshowMenu(null);
+  };
+
   return (
-    <IconButton
-      disableRipple
-      onClick={onClick}
-      sx={{ ml: "28.39px", mt: "7px", p: 0 }}
-    >
-      <SettingsIcon />
-    </IconButton>
+    <>
+      <PopupState variant="popover" popupId="demo-popup-popover">
+        {(popupState) => (
+          <>
+            <IconButton
+              disableRipple
+              {...bindTrigger(popupState)}
+              sx={{ ml: "28.39px", mt: "7px", p: 0 }}
+            >
+              <SettingsIcon />
+            </IconButton>
+            <Menu
+              slotProps={{
+                paper: {
+                  elevation: 0,
+                  sx: {
+                    width: "143px",
+                    height: 66,
+                    overflow: "visible",
+                    borderRadius: "10px",
+                    filter:
+                      "drop-shadow(0px 0px 20px rgba(117, 117, 117, 0.25))",
+                    ml: 4.9,
+                    mt: 1.2,
+                    px: 1.2,
+                    marginBottom: "10px",
+                    "&:before": {
+                      content: '""',
+                      display: "block",
+                      position: "absolute",
+                      top: 0,
+                      right: 25,
+                      width: 10,
+                      height: 10,
+                      bgcolor: "background.paper",
+                      transform: "translateY(-50%) rotate(45deg)",
+                      zIndex: 0,
+                    },
+                  },
+                },
+              }}
+              {...bindPopover(popupState)}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+            >
+              <Stack direction={"row"} spacing={2.75}>
+                <Typography
+                  fontSize={"12px"}
+                  color="#000"
+                  sx={{
+                    fontWeight: 400,
+                    fontFamily: "Segoe UI",
+                    p: 0,
+                    mt: "5px",
+                    pl: 1,
+                    cursor: "pointer",
+                  }}
+                >
+                  Dark Mode
+                </Typography>
+                <FormControlLabel
+                  control={
+                    <IOSSwitch
+                      icon={<ToggleIcon />}
+                      checkedIcon={<ToggleIcon />}
+                    />
+                  }
+                  {...props}
+                />
+              </Stack>
+              <MenuItem
+                onClick={handleClose}
+                sx={{ p: 0, mt: 1, pl: 1, borderRadius: "3px" }}
+                disableRipple
+              >
+                <Typography
+                  fontSize={"12px"}
+                  color="#000"
+                  sx={{
+                    fontWeight: 400,
+                    fontFamily: "Segoe UI",
+                  }}
+                >
+                  Layout Options
+                </Typography>
+              </MenuItem>
+            </Menu>
+          </>
+        )}
+      </PopupState>
+    </>
   );
 };
+
+const IOSSwitch = styled((props: any) => (
+  <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
+))(({ theme }) => ({
+  width: 48,
+  height: 14,
+  padding: 0,
+  paddingBottom: 0,
+  "& .MuiSwitch-switchBase": {
+    padding: 0,
+    margin: 0,
+    marginLeft: 1.4,
+    transitionDuration: "300ms",
+    "&.Mui-checked": {
+      transform: "translateX(25px)",
+      "& + .MuiSwitch-track": {
+        backgroundColor: "#EFEFEF",
+        opacity: 1,
+        border: 1,
+      },
+      "&.Mui-disabled + .MuiSwitch-track": {
+        opacity: 0.5,
+      },
+      "&:before": {
+        content: '"OFF"',
+        transform: "translateX(-26%)",
+        fontSize: 7,
+        color: "#B0B0B0",
+        marginLeft: -14,
+      },
+      "&:after": {
+        content: '"ON"',
+        transform: "translateX(-38%)",
+        fontSize: 7,
+        color: "#ffffff",
+        marginLeft: -14,
+      },
+    },
+    "&:before": {
+      content: '"OFF"',
+      transform: "translateX(145%)",
+      fontSize: 7,
+      color: "#ffffff",
+      marginLeft: -14,
+    },
+    "&:after": {
+      content: '"ON"',
+      transform: "translateX(10%)",
+      fontSize: 7,
+      color: "#B0B0B0",
+      margin: 0,
+    },
+  },
+  "& .MuiSwitch-track": {
+    borderRadius: 8,
+    // border: "1px solid red",
+    boxShadow: "0px 0px 6px 0px rgba(0, 0, 0, 0.3) inset",
+    backgroundColor: "#ffffff",
+    opacity: 1,
+    transition: theme.transitions.create(["background-color"], {
+      duration: 1000,
+    }),
+  },
+}));
 
 export default MesHomeHeaderSettings;
