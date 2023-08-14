@@ -20,6 +20,7 @@ import MesScanner from "./components/MesScanner/MesScanner";
 import MesCheckBox from "./components/MesCheckboxButton/MesCheckBox";
 import MesCheckboxController from "./components/MesCheckboxButton/MesCheckBoxController/MesCheckBoxController";
 import HomePage from "./HomePage";
+import MesLayout1 from "./components/MesLayouts/MesLayout1/MesLayout1";
 
 function App() {
   const [open, setOpen] = useState<boolean>(false);

@@ -29,12 +29,13 @@ import CloseIcon from "@mui/icons-material/Close";
 
 interface ILayoutProps {
   open: boolean;
-  handleClose?: Dispatch<SetStateAction<boolean>>;
+  handleClose?: Dispatch<SetStateAction<boolean>> | any;
 }
 
 const MesLayoutSwitcher: FC<ILayoutProps> = ({ open, handleClose }) => {
   const [close, setClose] = useState(false);
-  const [layout, setLayout] = useState(1);
+  const [layoutSlider, setLayoutSlider] = useState(1);
+
   return (
     <Dialog
       open={open}
@@ -67,6 +68,7 @@ const MesLayoutSwitcher: FC<ILayoutProps> = ({ open, handleClose }) => {
           style={{ backgroundColor: "#FF6B6B" }}
           onMouseEnter={() => setClose(true)}
           onMouseLeave={() => setClose(false)}
+          onClick={handleClose}
         >
           {close && <CloseIcon sx={{ fontSize: "14px" }} />}
         </IconButton>
@@ -109,7 +111,7 @@ const MesLayoutSwitcher: FC<ILayoutProps> = ({ open, handleClose }) => {
               ml: "51px",
             }}
           >
-            {layout === 1 ? (
+            {layoutSlider === 1 ? (
               <>
                 <MesLayoutButton name="Layout 1">
                   <MesLayout1 />
@@ -144,25 +146,25 @@ const MesLayoutSwitcher: FC<ILayoutProps> = ({ open, handleClose }) => {
               sx={{
                 width: "10px",
                 height: "10px",
-                backgroundColor: "#D9D9D9",
+                backgroundColor: layoutSlider === 1 ? "#002856" : "#D9D9D9",
                 "&:focus": {
                   backgroundColor: "#002856",
                 },
               }}
-              value={layout}
-              onClick={() => setLayout(1)}
+              value={layoutSlider}
+              onClick={() => setLayoutSlider(1)}
             ></IconButton>
             <IconButton
               sx={{
                 width: "10px",
                 height: "10px",
-                backgroundColor: "#D9D9D9",
+                backgroundColor: layoutSlider === 2 ? "#002856" : "#D9D9D9",
                 "&:focus": {
                   backgroundColor: "#002856",
                 },
               }}
-              value={layout}
-              onClick={() => setLayout(2)}
+              value={layoutSlider}
+              onClick={() => setLayoutSlider(2)}
             ></IconButton>
           </Stack>
         </DialogContent>

@@ -2,25 +2,24 @@ import { Avatar } from "@mui/material";
 import React, { FC, ReactNode } from "react";
 
 interface IMesProfile {
-  src?: ReactNode | any;
+  src: ReactNode | any;
   borderColor?: string;
-  style?: Object;
+  sx: any;
 }
-const MesHomeHeaderProfile: FC<IMesProfile> = ({ src, borderColor }) => {
+const MesProfile: FC<IMesProfile> = ({ src, borderColor, sx }) => {
   return (
     <Avatar
       variant="circular"
       src={src}
       alt={"#"}
-      sx={{
+      style={{
         width: "29px",
         height: "29px",
         border: `1px solid ${borderColor ?? "#002856"}`,
-        mt: "10px",
-        ml: "16.2px",
       }}
+      sx={sx}
     />
   );
 };
 
-export default MesHomeHeaderProfile;
+export default MesProfile;

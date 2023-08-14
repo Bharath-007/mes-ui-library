@@ -1,22 +1,21 @@
 import React, { FC, ReactNode } from "react";
 import { AppBar, Stack, Typography, styled } from "@mui/material";
-import CantierLogo from "../../../../Assets/CantierHomeLogo.svg";
-import { MesProfile } from "../../../MesLayouts";
+import CantierLogo from "../../../Assets/Cantier.svg";
 
-const TransparentAppBar = styled(AppBar)(({ theme }) => ({
+const CustomAppBar = styled(AppBar)(({ theme }) => ({
   position: "fixed",
-  backgroundColor: "#0000",
+  backgroundColor: "#002856",
   boxShadow: "none",
   paddingRight: "22px",
+  height: "50px",
 }));
 
 const CantierIconVersion = (props: any) => {
   return (
     <Stack
       sx={{
-        pt: "12px",
-        pl: "15px",
-        //    border: "1px solid red"
+        // border: "1px solid red",
+        height: "26px",
       }}
       direction={"row"}
       alignItems={"center"}
@@ -46,34 +45,20 @@ const CantierIconVersion = (props: any) => {
   );
 };
 
-interface IMesHomeHeader {
+interface IMesTitleBar {
   children?: ReactNode | ReactNode[];
-  version: string;
-  profileSrc?: string;
-  profileStyle?: any;
+  version?: string;
 }
 
-const MesHomeHeader: FC<IMesHomeHeader> = ({
-  children,
-  version,
-  profileSrc,
-  profileStyle,
-}) => {
+const MesTitleBar: FC<IMesTitleBar> = ({ children, version }) => {
   return (
-    <TransparentAppBar>
-      {/* <Info />
-      <Notifications />
-      <Settings />
-      <Profile /> */}
-      <Stack direction={"row"}>
+    <CustomAppBar>
+      <Stack direction={"row"} sx={{ pt: "12px", pl: "8px", pd: "12px" }}>
         <CantierIconVersion version={version ?? "MES X.0"} />
-        <Stack direction={"row"} sx={{ mt: "10px" }} spacing={"28.39px"}>
-          {children}
-        </Stack>
-        <MesProfile src={profileSrc} sx={profileStyle} />
+        {children}
       </Stack>
-    </TransparentAppBar>
+    </CustomAppBar>
   );
 };
 
-export default MesHomeHeader;
+export default MesTitleBar;

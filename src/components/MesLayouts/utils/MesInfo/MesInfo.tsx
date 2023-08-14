@@ -4,19 +4,16 @@ import InfoIcon from "../../../../Assets/HomeInfo.svg";
 
 interface IInfo {
   onClick?: React.MouseEvent<MouseEvent> | any;
-  icon?: ReactNode;
+  icon: ReactNode;
+  sx?: any;
 }
 
-const MesHomeHeaderInfo: FC<IInfo> = ({ onClick }) => {
+const MesInfo: FC<IInfo> = ({ icon, onClick, sx }) => {
   return (
-    <IconButton
-      disableRipple
-      onClick={onClick}
-      sx={{ ml: "28.39px", mt: "7px", p: 0 }}
-    >
-      <InfoIcon />
+    <IconButton disableRipple onClick={onClick} style={{ padding: 0 }} sx={sx}>
+      {icon ?? <InfoIcon />}
     </IconButton>
   );
 };
 
-export default MesHomeHeaderInfo;
+export default MesInfo;

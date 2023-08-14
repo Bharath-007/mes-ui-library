@@ -1,6 +1,6 @@
 import { IconButton } from "@mui/material";
 import React, { FC } from "react";
-import NotificationIcon from "../../../../Assets/HomeNotification.svg";
+import NotificationIcon from "../../../../Assets/MesNotification.svg";
 
 interface INotifications {
   onClick?: React.MouseEvent<MouseEvent> | any;

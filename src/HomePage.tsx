@@ -24,21 +24,42 @@ import HomeARMHovered from "./Assets/HomeARMHovered.svg";
 import HomeLM from "./Assets/HomeLicenseManager.svg";
 import HomeLMHovered from "./Assets/HomeLicenseManagerHovered.svg";
 import MesHomeHeader from "./components/Home/MesHomeComponents/MesHomeHeader/MesHomeHeader";
-import MesHomeHeaderProfile from "./components/Home/MesHomeComponents/MesHomeHeaderProfile/MesHomeHeaderProfile";
-import MesHomeHeaderSettings from "./components/Home/MesHomeComponents/MesHomeHeaderSettings/MesHomeHeaderSettings";
-import MesHomeHeaderNotifications from "./components/Home/MesHomeComponents/MesHomeHeaderNotifications/MesHomeHeaderNotifications";
-import MesHomeHeaderInfo from "./components/Home/MesHomeComponents/MesHomeHeaderInfo/MesHomeHeaderInfo";
-import BruceProf from "./Assets/BruceProfile.png";
+import Dp1 from "./Assets/dp1.jpg";
+import MesLayout from "./components/MesLayouts/MesLayout/MesLayout";
+import HomeInfoIcon from "./Assets/HomeInfo.svg";
+import HomeNotificationIcon from "./Assets/HomeNotification.svg";
+import HomeSettingsIcon from "./Assets/HomeSettings.svg";
+import {
+  MesInfo,
+  MesNotification,
+  MesSettings,
+  MesProfile,
+} from "./components";
 
 const HomePage = () => {
   return (
+    <>
+      <MesLayout></MesLayout>
+      {/* <Home /> */}
+    </>
+  );
+};
+
+const Home = () => {
+  return (
     <MesHome>
       {/* TitleBar Components */}
-      <MesHomeHeader version="Mes X.0">
-        <MesHomeHeaderInfo />
-        <MesHomeHeaderNotifications />
-        <MesHomeHeaderSettings />
-        <MesHomeHeaderProfile src={BruceProf} />
+      <MesHomeHeader
+        version="Mes X.0"
+        profileSrc={Dp1}
+        profileStyle={{
+          mt: "10px",
+          ml: "16.2px",
+        }}
+      >
+        <MesInfo icon={<HomeInfoIcon />} sx={{ mt: "5.9px" }} />
+        <MesNotification icon={<HomeNotificationIcon />} sx={{ mt: "5.9px" }} />
+        <MesSettings icon={<HomeSettingsIcon />} sx={{ mt: "5.9px" }} />
       </MesHomeHeader>
       {/* Modules Components */}
       {/* Mes Modules */}
