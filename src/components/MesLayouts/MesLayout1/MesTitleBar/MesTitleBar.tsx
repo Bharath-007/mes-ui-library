@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import { AppBar, Stack, Typography, styled } from "@mui/material";
-import CantierLogo from "../../../Assets/Cantier.svg";
+import CantierLogo from "../../../../Assets/Cantier.svg";
 
 const CustomAppBar = styled(AppBar)(({ theme }) => ({
   position: "fixed",
