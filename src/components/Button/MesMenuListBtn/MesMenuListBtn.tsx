@@ -25,7 +25,7 @@ const MesMenuListBtn: FC<IProps> = ({ children, onClick, icon }) => {
         sx={{
           margin: 0,
           borderRadius: 0,
-          height: "39px",
+          maxHeight: "39px",
           padding: 0,
           "&:hover": {
             background: "#F15D22",

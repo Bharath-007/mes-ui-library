@@ -36,7 +36,7 @@ import {
   MesProfile,
 } from "./components";
 
-import MesTitleBar from "./components/MesLayouts/MesLayout1/MesTitleBar/MesTitleBar";
+import MesTitleBar from "./components/MesTitleBar/MesTitleBar";
 import DP from "./Assets/dp1.jpg";
 import InfoIcon from "./Assets/MesInfo.svg";
 import NotificationIcon from "./Assets/MesNotification.svg";
@@ -59,14 +59,20 @@ import MenuARM from "./Assets/MenuARM.svg";
 import MenuARMHovered from "./Assets/MenuARMHovered.svg";
 import MenuLM from "./Assets/MenuLM.svg";
 import MenuLMHovered from "./Assets/MenuLMHovered.svg";
+import MesInfoL2 from "./Assets/MesInfoL2.svg";
+import MesSettingsL2 from "./Assets/MesSettingsL2.svg";
+import MesNotificationL2 from "./Assets/MesNotificationL2.svg";
 // import { MesInfo, MesNotification, MesProfile, MesSettings } from "../utils";
 import MesMenuIconBtn from "./components/Button/MesMenuIconBtn/MesMenuIconBtn";
 // import {MesModuleButton} from "./components/Home/MesHomeComponents/MesModules";
 import MesMenuListBtn from "./components/Button/MesMenuListBtn/MesMenuListBtn";
-import MesMenuModule from "./components/MesLayouts/MesLayout1/MesMenuModule/MesMenuModule";
+import MesMenuModule from "./components/MesMenuModule/MesMenuModule";
 import EmployeeIcon from "./Assets/SubMenuEmployees.svg";
-import MesIconMenuContainer from "./components/MesLayouts/MesLayout1/MesIconMenuContainer/MesIconMenuContainer";
+import MesIconMenuContainer from "./components/MesIconMenuContainer/MesIconMenuContainer";
 import { Grid, Stack } from "@mui/material";
+import MesBodyContainer from "./components/MesBodyContainer/MesBodyContainer";
+import MesSideBarContainer from "./components/MesSideBarContainer/MesSideBarContainer";
+import MesMenuModuleUtils from "./components/MesMenuModuleUtils/MesMenuModuleUtils";
 
 const HomePage = () => {
   return (
@@ -78,74 +84,68 @@ const HomePage = () => {
           style={{ backgroundColor: "#E5E5E5" }}
         >
           <MesTitleBar version="Mes X.0">
-            <Stack direction={"row"} spacing={"28.85px"}>
+            <Stack
+              direction="row"
+              style={{ zIndex: 9999 }}
+              spacing={"28.85px"}
+              justifyContent={"center"}
+            >
               <MesInfo icon={<InfoIcon />} />
               <MesNotification icon={<NotificationIcon />} />
               <MesSettings icon={<SettingsIcon />} />
+              <MesProfile src={DP}  sx={{ marginLeft: "16.24px" }} />
             </Stack>
-            <MesProfile src={DP} sx={{ marginLeft: "16.24px" }} />
           </MesTitleBar>
           {/* Sidebar & Body */}
-          <Stack sx={{ width: "100%" }} height={"100vh"} direction={"row"}>
-            <Stack
-              width={"256px"}
-              height={"505px"}
-              mt={"72px"}
-              // sx={{ border: "1px solid red" }}
-            >
-              <Grid
-                container
-                direction="row"
-                justifyContent="flex-start"
-                alignItems="flex-start"
-                alignContent="stretch"
-                wrap="wrap"
-                // sx={{ border: "1px solid red" }}
-              >
-                {/* Menu Buttons */}
-                <MesIconMenuContainer>
-                  <MesMenuIconBtn
-                    icon={<MenuHome />}
-                    hovered={<MenuHomeHovered />}
-                    home={true}
-                  />
-                  <MesMenuIconBtn
-                    icon={<MenuMasterData />}
-                    hovered={<MenuMasterDataHovered />}
-                  />
-                  <MesMenuIconBtn
-                    icon={<MenuSecurity />}
-                    hovered={<MenuSecurityHovered />}
-                  />
-                  <MesMenuIconBtn
-                    icon={<MenuIIOT />}
-                    hovered={<MenuIIOTHovered />}
-                  />
-                  <MesMenuIconBtn
-                    icon={<MenuFM />}
-                    hovered={<MenuFMHovered />}
-                  />
-                  <MesMenuIconBtn
-                    icon={<MenuDB />}
-                    hovered={<MenuDBHovered />}
-                  />
-                  <MesMenuIconBtn
-                    icon={<MenuARM />}
-                    hovered={<MenuARMHovered />}
-                  />
-                  <MesMenuIconBtn
-                    icon={<MenuLM />}
-                    hovered={<MenuLMHovered />}
-                  />
-                </MesIconMenuContainer>
-                {/* Menu-Module */}
-                <MesMenuModule title="Master Data">
+          <MesBodyContainer>
+            <MesSideBarContainer>
+              {/* Menu Buttons */}
+              <MesIconMenuContainer>
+                <MesMenuIconBtn
+                  icon={<MenuHome />}
+                  hovered={<MenuHomeHovered />}
+                  home={true}
+                />
+                <MesMenuIconBtn
+                  icon={<MenuMasterData />}
+                  hovered={<MenuMasterDataHovered />}
+                />
+                <MesMenuIconBtn
+                  icon={<MenuSecurity />}
+                  hovered={<MenuSecurityHovered />}
+                />
+                <MesMenuIconBtn
+                  icon={<MenuIIOT />}
+                  hovered={<MenuIIOTHovered />}
+                />
+                <MesMenuIconBtn icon={<MenuFM />} hovered={<MenuFMHovered />} />
+                <MesMenuIconBtn icon={<MenuDB />} hovered={<MenuDBHovered />} />
+                <MesMenuIconBtn
+                  icon={<MenuARM />}
+                  hovered={<MenuARMHovered />}
+                />
+                <MesMenuIconBtn icon={<MenuLM />} hovered={<MenuLMHovered />} />
+              </MesIconMenuContainer>
+              {/* Menu-Module */}
+              <MesMenuModule title="Master Data">
+                <Stack flexGrow={1}>
                   <MesMenuListBtn icon={<EmployeeIcon />}>
                     Employees
                   </MesMenuListBtn>
-                </MesMenuModule>
-              </Grid>
-            </Stack>
+                  <MesMenuListBtn icon={<EmployeeIcon />}>
+                    Employees
+                  </MesMenuListBtn>
+                </Stack>
+                <MesMenuModuleUtils>
+                  <Stack spacing={"24.85px"} direction={"row"}>
+                    <MesInfo icon={<MesInfoL2 />} />
+                    <MesNotification icon={<MesNotificationL2 />} />
+                    <MesSettings icon={<MesSettingsL2 />} />
+                  </Stack>
+                  <MesProfile src={DP} size={"24px"} sx={{ marginLeft: "17px" }} />
+                </MesMenuModuleUtils>
+              </MesMenuModule>
+            </MesSideBarContainer>
             {/* Body */}
             <Stack
               flexGrow={1}
@@ -156,7 +156,7 @@ const HomePage = () => {
               }}
               sx={{ border: "1px solid red" }}
             ></Stack>
-          </Stack>
+          </MesBodyContainer>
         </Stack>
       </MesLayoutProvider>
       {/* <Home /> */}
@@ -177,7 +177,7 @@ const Home = () => {
         }}
       >
         <MesInfo icon={<HomeInfoIcon />} sx={{ mt: "5.9px" }} />
-        <MesNotification icon={<HomeNotificationIcon />} sx={{ mt: "5.9px" }} />
+        <MesNotification icon={<MesNotificationL2 />} sx={{ mt: "5.9px" }} />
         <MesSettings icon={<HomeSettingsIcon />} sx={{ mt: "5.9px" }} />
       </MesHomeHeader>
       {/* Modules Components */}

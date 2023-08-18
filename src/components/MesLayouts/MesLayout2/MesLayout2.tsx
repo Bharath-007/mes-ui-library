@@ -1,10 +1,14 @@
 import { Stack } from "@mui/material";
-import React from "react";
+import React, { FC } from "react";
 
-const MesLayout2 = () => {
+interface ILayout2{
+  children:any;
+}
+
+const MesLayout2:FC<ILayout2> = ({children}) => {
   return (
     <Stack width={"100%"} height={"100vh"}>
-      MesLayout2
+      {children}
     </Stack>
   );
 };

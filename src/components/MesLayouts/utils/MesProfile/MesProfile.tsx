@@ -5,16 +5,17 @@ interface IMesProfile {
   src: ReactNode | any;
   borderColor?: string;
   sx: any;
+  size?: string;
 }
-const MesProfile: FC<IMesProfile> = ({ src, borderColor, sx }) => {
+const MesProfile: FC<IMesProfile> = ({ src, borderColor, sx, size }) => {
   return (
     <Avatar
       variant="circular"
       src={src}
       alt={"#"}
       style={{
-        width: "29px",
-        height: "29px",
+        width: size ? size : "29px",
+        height: size ? size : "29px",
         border: `1px solid ${borderColor ?? "#002856"}`,
       }}
       sx={sx}

@@ -10,12 +10,15 @@ import {
   Typography,
   styled,
 } from "@mui/material";
-import React, { FC, ReactNode, useState } from "react";
+import React, { FC, ReactNode, useContext, useState } from "react";
 
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import ToggleIcon from "../../../../Assets/ThemeToggle.svg";
 import SettingsIcon from "../../../../Assets/HomeSettings.svg";
 import MesLayoutSwitcher from "../../../MesLayoutSwitcher/MesLayoutSwitcher/MesLayoutSwitcher";
+
+// Catching Current layout
+import MesLayoutContext from "../../MesLayoutContext/MesLayoutContext";
 
 interface ISettings {
   onClick?: React.MouseEvent<MouseEvent> | any;
@@ -25,6 +28,9 @@ interface ISettings {
 }
 
 const MesSettings: FC<ISettings> = ({ props, sx, icon }) => {
+  //using global state(currentLayout) globally using useContext
+  const { currentLayout, setCurrentLayout } = useContext(MesLayoutContext);
+
   const [openLayout, setLayoutOpen] = useState(false);
 
   const handleClose = () => {
@@ -36,7 +42,7 @@ const MesSettings: FC<ISettings> = ({ props, sx, icon }) => {
 
   return (
     <>
-      <PopupState variant="popover" popupId="demo-popup-popover">
+      <PopupState variant="popover">
         {(popupState) => (
           <>
             <IconButton
@@ -58,16 +64,16 @@ const MesSettings: FC<ISettings> = ({ props, sx, icon }) => {
                     borderRadius: "10px",
                     filter:
                       "drop-shadow(0px 0px 20px rgba(117, 117, 117, 0.25))",
-                    ml: 4.9,
-                    mt: 1.2,
+                    ml: currentLayout === "2" ? 1 : 4.9,
+                    mt: currentLayout === "2" ?2:1.2,
                     px: 1.2,
                     marginBottom: "10px",
                     "&:before": {
                       content: '""',
                       display: "block",
                       position: "absolute",
-                      top: 0,
-                      right: 25,
+                      top:0,
+                      right: currentLayout === "2" ?60:25,
                       width: 10,
                       height: 10,
                       bgcolor: "background.paper",

@@ -1,6 +1,15 @@
 import { IconButton } from "@mui/material";
-import React, { FC, ReactElement, ReactNode, useState } from "react";
+import React, {
+  FC,
+  ReactElement,
+  ReactNode,
+  useContext,
+  useState,
+} from "react";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+
+// Catching Current layout
+import MesLayoutContext from "../../MesLayouts/MesLayoutContext/MesLayoutContext";
 
 interface IProps {
   icon: ReactNode | ReactElement;
@@ -8,7 +17,10 @@ interface IProps {
   hovered?: ReactNode | ReactElement;
   home?: boolean;
 }
+
 const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home }) => {
+  //using global state(currentLayout) globally using useContext
+  const { currentLayout, setCurrentLayout } = useContext(MesLayoutContext);
   const [hover, setHover] = useState(false);
 
   return (
@@ -29,9 +41,9 @@ const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home }) => {
               content: '""',
               display: "block",
               position: "absolute",
-              top: 15,
+              top: currentLayout === "2" ? 35 : 15,
               right: 0,
-              left: 45,
+              left: currentLayout === "2" ? 28:45,
               width: home ? 0 : 8,
               height: home ? 0 : 10,
               bgcolor: "#F15D22",
@@ -45,9 +57,9 @@ const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home }) => {
               content: '""',
               display: "block",
               position: "absolute",
-              top: 15,
+              top: currentLayout === "2" ? 35 : 15,
               right: 0,
-              left: 45,
+              left: currentLayout === "2" ? 28:45,
               width: home ? 0 : 8,
               height: home ? 0 : 10,
               bgcolor: "#002856",
