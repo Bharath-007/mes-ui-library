@@ -3,10 +3,11 @@ import React, {
   FC,
   ReactNode,
   SetStateAction,
+  useContext,
   useState,
 } from "react";
 import Dialog from "@mui/material/Dialog";
-import DialogTitle from "@mui/material/DialogTitle";
+import DialogTitle from "@mui/material/DialogTitle"
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogActions from "@mui/material/DialogActions";
@@ -17,24 +18,26 @@ import MesLayout3 from "../../../Assets/MesLayout3.svg";
 import MesLayout4 from "../../../Assets/MesLayout4.svg";
 import MesLayout5 from "../../../Assets/MesLayout5.svg";
 import {
-  Box,
   Divider,
   IconButton,
   Stack,
   Typography,
-  ButtonGroup,
-  Fade,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
+// importing via context
+import MesLayoutContext from "../../MesLayouts/MesLayoutContext/MesLayoutContext";
+
 interface ILayoutProps {
   open: boolean;
-  handleClose?: Dispatch<SetStateAction<boolean>>;
+  handleClose?: Dispatch<SetStateAction<boolean>> | any;
 }
 
 const MesLayoutSwitcher: FC<ILayoutProps> = ({ open, handleClose }) => {
+  const {currentLayout,setCurrentLayout}=useContext(MesLayoutContext);
   const [close, setClose] = useState(false);
-  const [layout, setLayout] = useState(1);
+  const [layoutSlider, setLayoutSlider] = useState(1);
+
   return (
     <Dialog
       open={open}
@@ -67,6 +70,7 @@ const MesLayoutSwitcher: FC<ILayoutProps> = ({ open, handleClose }) => {
           style={{ backgroundColor: "#FF6B6B" }}
           onMouseEnter={() => setClose(true)}
           onMouseLeave={() => setClose(false)}
+          onClick={handleClose}
         >
           {close && <CloseIcon sx={{ fontSize: "14px" }} />}
         </IconButton>
@@ -109,24 +113,34 @@ const MesLayoutSwitcher: FC<ILayoutProps> = ({ open, handleClose }) => {
               ml: "51px",
             }}
           >
-            {layout === 1 ? (
+            {layoutSlider === 1 ? (
               <>
-                <MesLayoutButton name="Layout 1">
+                <MesLayoutButton name="Layout 1"  onClick={()=>{
+                  setCurrentLayout("1")
+                }}>
                   <MesLayout1 />
                 </MesLayoutButton>
-                <MesLayoutButton name="Layout 2">
+                <MesLayoutButton name="Layout 2"  onClick={()=>{
+                  setCurrentLayout("2")
+                }}>
                   <MesLayout2 />
                 </MesLayoutButton>
-                <MesLayoutButton name="Layout 3">
+                <MesLayoutButton name="Layout 3"  onClick={()=>{
+                  setCurrentLayout("3")
+                }}>
                   <MesLayout3 />
                 </MesLayoutButton>
               </>
             ) : (
               <>
-                <MesLayoutButton name="Layout 4">
+                <MesLayoutButton name="Layout 4"  onClick={()=>{
+                  console.log("4")
+                }}>
                   <MesLayout4 />
                 </MesLayoutButton>
-                <MesLayoutButton name="Layout 5">
+                <MesLayoutButton name="Layout 5"  onClick={()=>{
+                  console.log("5")
+                }}>
                   <MesLayout5 />
                 </MesLayoutButton>
               </>
@@ -144,25 +158,25 @@ const MesLayoutSwitcher: FC<ILayoutProps> = ({ open, handleClose }) => {
               sx={{
                 width: "10px",
                 height: "10px",
-                backgroundColor: "#D9D9D9",
+                backgroundColor: layoutSlider === 1 ? "#002856" : "#D9D9D9",
                 "&:focus": {
                   backgroundColor: "#002856",
                 },
               }}
-              value={layout}
-              onClick={() => setLayout(1)}
+              value={layoutSlider}
+              onClick={() => setLayoutSlider(1)}
             ></IconButton>
             <IconButton
               sx={{
                 width: "10px",
                 height: "10px",
-                backgroundColor: "#D9D9D9",
+                backgroundColor: layoutSlider === 2 ? "#002856" : "#D9D9D9",
                 "&:focus": {
                   backgroundColor: "#002856",
                 },
               }}
-              value={layout}
-              onClick={() => setLayout(2)}
+              value={layoutSlider}
+              onClick={() => setLayoutSlider(2)}
             ></IconButton>
           </Stack>
         </DialogContent>
@@ -171,12 +185,13 @@ const MesLayoutSwitcher: FC<ILayoutProps> = ({ open, handleClose }) => {
   );
 };
 
-interface ILayout {
+interface IMesLayoutButton {
   children: ReactNode;
   name: string;
+  onClick:any
 }
 
-const MesLayoutButton: FC<ILayout> = ({ children, name }) => {
+const MesLayoutButton: FC<IMesLayoutButton> = ({ children, name ,onClick}) => {
   return (
     <Stack>
       <IconButton
@@ -192,6 +207,7 @@ const MesLayoutButton: FC<ILayout> = ({ children, name }) => {
           },
         }}
         style={{ width: "130px", height: "105px" }}
+        onClick={onClick}
       >
         {children}
       </IconButton>
