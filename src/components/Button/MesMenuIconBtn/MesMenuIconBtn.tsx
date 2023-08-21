@@ -10,6 +10,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 // Catching Current layout
 import MesLayoutContext from "../../MesLayouts/MesLayoutContext/MesLayoutContext";
+import { Link } from "react-router-dom";
 
 interface IProps {
   icon: ReactNode | ReactElement;
@@ -17,15 +18,17 @@ interface IProps {
   hovered?: ReactNode | ReactElement;
   home?: boolean;
   size?: string;
+  to: string;
 }
 
-const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home, size }) => {
+const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home, size, to }) => {
   //using global state(currentLayout) globally using useContext
   const { currentLayout, setCurrentLayout } = useContext(MesLayoutContext);
   const [hover, setHover] = useState(false);
 
   return (
-    <IconButton
+   <Link to={to}>
+     <IconButton
       style={{
         width: `${size ?? "40px"}`,
         height: `${size ?? "40px"}`,
@@ -76,6 +79,7 @@ const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home, size }) => {
     >
       {hover ? hovered : icon}
     </IconButton>
+   </Link>
   );
 };
 
