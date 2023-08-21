@@ -134,12 +134,12 @@ const MesLayoutSwitcher: FC<ILayoutProps> = ({ open, handleClose }) => {
             ) : (
               <>
                 <MesLayoutButton name="Layout 4"  onClick={()=>{
-                  console.log("4")
+                  setCurrentLayout("4")
                 }}>
                   <MesLayout4 />
                 </MesLayoutButton>
                 <MesLayoutButton name="Layout 5"  onClick={()=>{
-                  console.log("5")
+                 setCurrentLayout("5")
                 }}>
                   <MesLayout5 />
                 </MesLayoutButton>

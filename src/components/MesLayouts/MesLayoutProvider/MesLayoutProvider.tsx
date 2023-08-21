@@ -16,7 +16,7 @@ const MesLayoutProvider: FC<Layout> = ({ children }) => {
   const [currentLayout, setCurrentLayout] = useState<string | any>('1');
 
   useEffect(() => {
-    console.log(currentLayout);
+    // console.log(currentLayout);
   }, [currentLayout])
   
   return (

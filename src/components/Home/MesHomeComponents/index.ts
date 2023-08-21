@@ -1,9 +1,5 @@
 export { default as MesFAQ } from "./MesFAQ";
-<<<<<<< HEAD
-export * from "./MesModule";
-=======
 export { default as MesModules } from "./MesModules/MesModules";
->>>>>>> MesLayout1
 export { default as MesPrivacyPolicy } from "./MesPrivacyPolicy";
 export { default as MesSupport } from "./MesSupport";
 export * from "./MesQuiklink";

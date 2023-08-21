@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import MesHome from "./components/Home/MesHome/MesHome";
-<<<<<<< HEAD
-import MesModules from "./components/Home/MesHomeComponents/MesModule/MesModules";
-import MesQuiklinks from "./components/Home/MesHomeComponents/MesQuiklink/MesQuicklinks";
-=======
 import MesModules from "./components/Home/MesHomeComponents/MesModules/MesModules/MesModules";
-import MesQuiklinks from "./components/Home/MesHomeComponents/MesQuiklinks/MesQuiklinks";
->>>>>>> MesLayout1
+import MesQuiklinks from "./components/Home/MesHomeComponents/MesQuiklink/MesQuicklinks";
 import MesPrivacyPolicy from "./components/Home/MesHomeComponents/MesPrivacyPolicy/MesPrivacyPolicy";
 import MesFAQ from "./components/Home/MesHomeComponents/MesFAQ/MesFAQ";
 import MesSupport from "./components/Home/MesHomeComponents/MesSupport/MesSupport";
@@ -205,7 +200,7 @@ const Home = () => {
       </MesHomeHeader>
       {/* Modules Components */}
       {/* Mes Modules */}
-      {/* <MesModules>
+      <MesModules>
         <MesModuleButton
           icon={<HomeMasterData />}
           hoverIcon={<HomeMasterDataHovered />}
@@ -239,7 +234,7 @@ const Home = () => {
         <MesModuleButton icon={<HomeLM />} hoverIcon={<HomeLMHovered />}>
           License Manager
         </MesModuleButton>
-      </MesModules> */}
+      </MesModules>
       {/* Mes Quick links */}
       <MesQuiklinks>
         <MesQuicklinkButton>API Event Viewer</MesQuicklinkButton>
