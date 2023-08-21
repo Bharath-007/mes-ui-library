@@ -5,8 +5,8 @@ export { default as MesScanner } from "./MesScanner";
 export { default as MesIconMenuContainer } from "./MesIconMenuContainer";
 export { default as MesBreadCrumbs } from "./MesBreadCrumbs";
 export { default as MesBreadCrumbsText } from "./MesBreadCrumbsText";
-export {default as MesMenuModuleUtils} from "./MesMenuModuleUtils"
-export * from "./Button"
+export { default as MesMenuModuleUtils } from "./MesMenuModuleUtils";
+export * from "./Button";
 export * from "./SideBar";
 export * from "./MesRadioButton";
 export * from "./MesCheckboxButton";

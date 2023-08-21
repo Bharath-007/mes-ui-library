@@ -4,17 +4,17 @@ import InfoIcon from "../../../../Assets/HomeInfo.svg";
 
 interface IInfo {
   onClick?: React.MouseEvent<MouseEvent> | any;
-  icon?: ReactNode;
+  icon: ReactNode;
 }
 
-const MesHomeHeaderInfo: FC<IInfo> = ({ onClick }) => {
+const MesHomeHeaderInfo: FC<IInfo> = ({ onClick ,icon}) => {
   return (
     <IconButton
       disableRipple
       onClick={onClick}
       sx={{ ml: "28.39px", mt: "7px", p: 0 }}
     >
-      <InfoIcon />
+      {icon??<InfoIcon />}
     </IconButton>
   );
 };
