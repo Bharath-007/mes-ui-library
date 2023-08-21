@@ -1,0 +1,22 @@
+<svg width="172" height="147" viewBox="0 0 172 147" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="layout_options - hover">
+<g id="Rectangle 38" filter="url(#filter0_d_12_2548)">
+<rect x="21" y="21" width="130" height="105" rx="2" fill="white"/>
+<rect x="20.5" y="20.5" width="131" height="106" rx="2.5" stroke="#C1C1C1"/>
+</g>
+<rect id="Rectangle 62" x="25" y="37" width="19" height="85" rx="2" fill="#F2F2F2"/>
+<rect id="Rectangle 39" x="25" y="25" width="122" height="8" rx="2" fill="#E5E5E5"/>
+</g>
+<defs>
+<filter id="filter0_d_12_2548" x="0" y="0" width="172" height="147" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="10"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.458321 0 0 0 0 0.458321 0 0 0 0 0.458321 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_12_2548"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_12_2548" result="shape"/>
+</filter>
+</defs>
+</svg>

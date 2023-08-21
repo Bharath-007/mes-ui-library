@@ -1,6 +1,7 @@
 import { IconButton } from "@mui/material";
 import React, { FC } from "react";
 import SettingsIcon from "../../../../Assets/HomeSettings.svg";
+import MesLayoutSwitcher from "../../../MesLayoutSwitcher/MesLayoutSwitcher/MesLayoutSwitcher";
 
 interface ISettings {
   onClick?: React.MouseEvent<MouseEvent> | any;
