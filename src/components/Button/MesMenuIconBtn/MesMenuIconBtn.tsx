@@ -16,9 +16,10 @@ interface IProps {
   sx?: any;
   hovered?: ReactNode | ReactElement;
   home?: boolean;
+  size?: string;
 }
 
-const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home }) => {
+const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home, size }) => {
   //using global state(currentLayout) globally using useContext
   const { currentLayout, setCurrentLayout } = useContext(MesLayoutContext);
   const [hover, setHover] = useState(false);
@@ -26,8 +27,8 @@ const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home }) => {
   return (
     <IconButton
       style={{
-        width: "40px",
-        height: "40px",
+        width: `${size ?? "40px"}`,
+        height: `${size ?? "40px"}`,
         borderRadius: "4px",
         boxShadow: "0px 0px 20px 0px rgba(117, 117, 117, 0.25)",
       }}
@@ -43,7 +44,7 @@ const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home }) => {
               position: "absolute",
               top: currentLayout === "2" ? 35 : 15,
               right: 0,
-              left: currentLayout === "2" ? 28:45,
+              left: currentLayout === "2" ? 28 : 45,
               width: home ? 0 : 8,
               height: home ? 0 : 10,
               bgcolor: "#F15D22",
@@ -59,7 +60,7 @@ const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home }) => {
               position: "absolute",
               top: currentLayout === "2" ? 35 : 15,
               right: 0,
-              left: currentLayout === "2" ? 28:45,
+              left: currentLayout === "2" ? 28 : 45,
               width: home ? 0 : 8,
               height: home ? 0 : 10,
               bgcolor: "#002856",

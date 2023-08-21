@@ -73,6 +73,8 @@ import { Grid, Stack } from "@mui/material";
 import MesBodyContainer from "./components/MesBodyContainer/MesBodyContainer";
 import MesSideBarContainer from "./components/MesSideBarContainer/MesSideBarContainer";
 import MesMenuModuleUtils from "./components/MesMenuModuleUtils/MesMenuModuleUtils";
+import MesBreadCrumbs from "./components/MesBreadCrumbs/MesBreadCrumbs";
+import MesBreadCrumbsText from "./components/MesBreadCrumbsText/MesBreadCrumbsText";
 
 const HomePage = () => {
   return (
@@ -93,7 +95,7 @@ const HomePage = () => {
               <MesInfo icon={<InfoIcon />} />
               <MesNotification icon={<NotificationIcon />} />
               <MesSettings icon={<SettingsIcon />} />
-              <MesProfile src={DP}  sx={{ marginLeft: "16.24px" }} />
+              <MesProfile src={DP} sx={{ marginLeft: "16.24px" }} />
             </Stack>
           </MesTitleBar>
           {/* Sidebar & Body */}
@@ -142,20 +144,36 @@ const HomePage = () => {
                     <MesNotification icon={<MesNotificationL2 />} />
                     <MesSettings icon={<MesSettingsL2 />} />
                   </Stack>
-                  <MesProfile src={DP} size={"24px"} sx={{ marginLeft: "17px" }} />
+                  <MesProfile
+                    src={DP}
+                    size={"24px"}
+                    sx={{ marginLeft: "17px" }}
+                  />
                 </MesMenuModuleUtils>
               </MesMenuModule>
             </MesSideBarContainer>
             {/* Body */}
+
             <Stack
               flexGrow={1}
               style={{
-                marginTop: "72px",
+                // Page margins
+                marginTop: "81px",
                 marginLeft: "12px",
                 marginRight: "12px",
               }}
               sx={{ border: "1px solid red" }}
-            ></Stack>
+            >
+              <Stack mb={3}>
+                <MesBreadCrumbs>
+                  <MesBreadCrumbsText id="1">Home</MesBreadCrumbsText>
+                  <MesBreadCrumbsText id="1">
+                    Integration Manager
+                  </MesBreadCrumbsText>
+                  <MesBreadCrumbsText id="1">CRON Jobs</MesBreadCrumbsText>
+                </MesBreadCrumbs>
+              </Stack>
+            </Stack>
           </MesBodyContainer>
         </Stack>
       </MesLayoutProvider>
