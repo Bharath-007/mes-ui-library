@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MesHome from "./components/Home/MesHome/MesHome";
-import MesModules from "./components/Home/MesHomeComponents/MesModules/MesModules/MesModules";
+import MesModules from "./components/Home/MesHomeComponents/MesModule/MesModules/MesModules";
 import MesQuiklinks from "./components/Home/MesHomeComponents/MesQuiklink/MesQuicklinks";
 import MesPrivacyPolicy from "./components/Home/MesHomeComponents/MesPrivacyPolicy/MesPrivacyPolicy";
 import MesFAQ from "./components/Home/MesHomeComponents/MesFAQ/MesFAQ";

@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
-import MesTitleBar from "./MesTitleBar/MesTitleBar";
+import MesTitleBar from "../../MesTitleBar/MesTitleBar";
 import DP from "../../../Assets/dp1.jpg";
 import InfoIcon from "../../../Assets/MesInfo.svg";
 import NotificationIcon from "../../../Assets/MesNotification.svg";
@@ -25,9 +25,9 @@ import MenuLM from "../../../Assets/MenuLM.svg";
 import MenuLMHovered from "../../../Assets/MenuLMHovered.svg";
 import { MesInfo, MesNotification, MesProfile, MesSettings } from "../utils";
 import MesMenuIconBtn from "../../Button/MesMenuIconBtn/MesMenuIconBtn";
-import { MesModuleButton } from "../../Home/MesHomeComponents/MesModules/MesModules";
+// import { MesModuleButton } from "../../Home/MesHomeComponents/MesModule/MesModuleButton/MesModuleButton";
 import MesMenuListBtn from "../../Button/MesMenuListBtn/MesMenuListBtn";
-import MesMenuModule from "./MesMenuModule/MesMenuModule";
+// import MesMenuModule from "./MesMenuModule/MesMenuModule";
 import EmployeeIcon from "../../../Assets/SubMenuEmployees.svg";
 import MesIconMenuContainer from "../../MesIconMenuContainer/MesIconMenuContainer";
 

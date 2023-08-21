@@ -6,6 +6,7 @@ interface IModuleButtonProps {
   hoverIcon?: ReactNode;
   children: string;
 }
+
 const MesModuleButton: FC<IModuleButtonProps> = ({
   icon,
   children,
