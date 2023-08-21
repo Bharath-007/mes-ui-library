@@ -6,6 +6,7 @@ export { default as MesIconMenuContainer } from "./MesIconMenuContainer";
 export { default as MesBreadCrumbs } from "./MesBreadCrumbs";
 export { default as MesBreadCrumbsText } from "./MesBreadCrumbsText";
 export { default as MesMenuModuleUtils } from "./MesMenuModuleUtils";
+import {default as MesSideBarContainer} from "./MesSideBarContainer"
 export * from "./Button";
 export * from "./SideBar";
 export * from "./MesRadioButton";
