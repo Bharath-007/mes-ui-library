@@ -1,5 +1,5 @@
 export { default as MesFAQ } from "./MesFAQ";
-export { default as MesModules } from "./MesModules/MesModules";
+export * from "./MesModule";
 export { default as MesPrivacyPolicy } from "./MesPrivacyPolicy";
 export { default as MesSupport } from "./MesSupport";
 export * from "./MesQuiklink";
