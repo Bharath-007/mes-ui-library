@@ -18,6 +18,7 @@ interface IProps {
   hovered?: ReactNode | ReactElement;
   home?: boolean;
   size?: string;
+  onClick?: React.MouseEvent<MouseEvent> | any;
 }
 
 const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home, size }) => {
