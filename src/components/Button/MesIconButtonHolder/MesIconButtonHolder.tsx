@@ -8,6 +8,8 @@ interface IProps {
   sx?:Object;
   style?:Object
   bgColor?:string
+  // click event
+  onClick?: React.MouseEvent<MouseEvent> | any;
 }
 
 const MesIconButtonHolder: FC<IProps> = ({ size, label, icon,sx,style,bgColor }) => {
