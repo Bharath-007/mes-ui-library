@@ -34,6 +34,7 @@ import {
   MesNotification,
   MesSettings,
   MesProfile,
+  MesIconButtonHolder,
 } from "./components";
 
 import MesTitleBar from "./components/MesTitleBar/MesTitleBar";
@@ -164,7 +165,7 @@ const HomePage = () => {
               }}
               sx={{ border: "1px solid red" }}
             >
-              <Stack mb={3}>
+              <Stack mb={3} justifyContent={"space-between"}>
                 <MesBreadCrumbs>
                   <MesBreadCrumbsText id="1">Home</MesBreadCrumbsText>
                   <MesBreadCrumbsText id="1">
@@ -172,6 +173,7 @@ const HomePage = () => {
                   </MesBreadCrumbsText>
                   <MesBreadCrumbsText id="1">CRON Jobs</MesBreadCrumbsText>
                 </MesBreadCrumbs>
+                
               </Stack>
             </Stack>
           </MesBodyContainer>
