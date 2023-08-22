@@ -19,7 +19,6 @@ const MesIconButtonHolder: FC<IProps> = ({ size, label, icon,sx,style,bgColor,on
       width={`${size ? size : 40}px`}
       {...sx}
       {...style}
-      {...onClick}
     >
       <IconButton
         style={{
@@ -35,6 +34,7 @@ const MesIconButtonHolder: FC<IProps> = ({ size, label, icon,sx,style,bgColor,on
             backgroundColor: "#F15D22",
           },
         }}
+        {...onClick}
       >
         {icon}
       </IconButton>
