@@ -31,6 +31,7 @@ const MesMenuListBtn: FC<IProps> = ({ children, onClick, icon }) => {
             background: "#F15D22",
           },
         }}
+        {...onClick}
         // sx={{ border: "1px solid red" }}
       >
         <ListItemIcon

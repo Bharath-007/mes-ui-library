@@ -12,13 +12,14 @@ interface IProps {
   onClick?: React.MouseEvent<MouseEvent> | any;
 }
 
-const MesIconButtonHolder: FC<IProps> = ({ size, label, icon,sx,style,bgColor }) => {
+const MesIconButtonHolder: FC<IProps> = ({ size, label, icon,sx,style,bgColor,onClick }) => {
   return (
     <Stack
       spacing={"8px"}
       width={`${size ? size : 40}px`}
       {...sx}
       {...style}
+      {...onClick}
     >
       <IconButton
         style={{

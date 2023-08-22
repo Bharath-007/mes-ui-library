@@ -21,7 +21,7 @@ interface IProps {
   onClick?: React.MouseEvent<MouseEvent> | any;
 }
 
-const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home, size }) => {
+const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home, size,onClick }) => {
   //using global state(currentLayout) globally using useContext
   const { currentLayout, setCurrentLayout } = useContext(MesLayoutContext);
   const [hover, setHover] = useState(false);
@@ -73,6 +73,7 @@ const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home, size }) => {
         },
         sx,
       ]}
+      {...onClick}
       onMouseLeave={() => setHover(false)}
       onMouseEnter={() => setHover(true)}
     >
