@@ -7,9 +7,10 @@ interface IProps {
   icon: any;
   sx?:Object;
   style?:Object
+  bgColor?:string
 }
 
-const MesIconButtonHolder: FC<IProps> = ({ size, label, icon,sx,style }) => {
+const MesIconButtonHolder: FC<IProps> = ({ size, label, icon,sx,style,bgColor }) => {
   return (
     <Stack
       spacing={"8px"}
@@ -26,7 +27,7 @@ const MesIconButtonHolder: FC<IProps> = ({ size, label, icon,sx,style }) => {
         }}
         disableRipple
         sx={{
-          backgroundColor: "#F2F2F2",
+          backgroundColor: bgColor?bgColor:"#F2F2F2",
           "&:hover": {
             backgroundColor: "#F15D22",
           },
