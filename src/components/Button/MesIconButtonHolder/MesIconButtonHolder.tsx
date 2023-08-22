@@ -9,7 +9,7 @@ interface IProps {
   style?:Object
   bgColor?:string
   // click event
-  onClick?: React.MouseEvent<MouseEvent> | any;
+  onClick?:React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const MesIconButtonHolder: FC<IProps> = ({ size, label, icon,sx,style,bgColor,onClick }) => {

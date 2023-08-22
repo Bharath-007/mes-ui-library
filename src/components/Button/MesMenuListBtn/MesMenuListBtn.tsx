@@ -15,7 +15,7 @@ interface IProps {
   hoverIcon?: ReactNode;
   selectedIcon?: ReactNode;
   children?: string;
-  onClick?: React.MouseEvent<MouseEvent> | any ;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const MesMenuListBtn: FC<IProps> = ({ children, onClick, icon }) => {
