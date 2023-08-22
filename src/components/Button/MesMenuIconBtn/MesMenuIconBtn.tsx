@@ -18,7 +18,7 @@ interface IProps {
   hovered?: ReactNode | ReactElement;
   home?: boolean;
   size?: string;
-  to: string;
+  to?: string;
 }
 
 const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home, size, to }) => {
@@ -27,7 +27,7 @@ const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home, size, to }) => {
   const [hover, setHover] = useState(false);
 
   return (
-   <Link to={to}>
+   <Link to={to??"/"}>
      <IconButton
       style={{
         width: `${size ?? "40px"}`,
