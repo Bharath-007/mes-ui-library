@@ -5,21 +5,23 @@ interface IProps {
   label?: string;
   size?: string;
   icon: any;
-  sx?:Object;
-  style?:Object
-  bgColor?:string
-  // click event
-  onClick?:React.MouseEventHandler<HTMLButtonElement>;
+  sx?: Object;
+  style?: Object;
+  bgColor?: string;
+  onClick?: any;
 }
 
-const MesIconButtonHolder: FC<IProps> = ({ size, label, icon,sx,style,bgColor,onClick }) => {
+const MesIconButtonHolder: FC<IProps> = ({
+  size,
+  label,
+  icon,
+  sx,
+  style,
+  bgColor,
+  onClick,
+}) => {
   return (
-    <Stack
-      spacing={"8px"}
-      width={`${size ? size : 40}px`}
-      {...sx}
-      {...style}
-    >
+    <Stack spacing={"8px"} width={`${size ? size : 40}px`} {...sx} {...style}>
       <IconButton
         style={{
           width: `${size ?? "40px"}`,
@@ -29,12 +31,12 @@ const MesIconButtonHolder: FC<IProps> = ({ size, label, icon,sx,style,bgColor,on
         }}
         disableRipple
         sx={{
-          backgroundColor: bgColor?bgColor:"#F2F2F2",
+          backgroundColor: bgColor ? bgColor : "#F2F2F2",
           "&:hover": {
             backgroundColor: "#F15D22",
           },
         }}
-        {...onClick}
+        onClick={onClick}
       >
         {icon}
       </IconButton>

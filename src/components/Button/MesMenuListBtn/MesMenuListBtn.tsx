@@ -15,7 +15,7 @@ interface IProps {
   hoverIcon?: ReactNode;
   selectedIcon?: ReactNode;
   children?: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: React.MouseEvent<MouseEvent> | any ;
 }
 
 const MesMenuListBtn: FC<IProps> = ({ children, onClick, icon }) => {
@@ -31,7 +31,7 @@ const MesMenuListBtn: FC<IProps> = ({ children, onClick, icon }) => {
             background: "#F15D22",
           },
         }}
-        {...onClick}
+        onClick={onClick}
         // sx={{ border: "1px solid red" }}
       >
         <ListItemIcon
