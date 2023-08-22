@@ -73,7 +73,7 @@ const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home, size,onClick }) =
         },
         sx,
       ]}
-      {...onClick}
+      onClick={onClick}
       onMouseLeave={() => setHover(false)}
       onMouseEnter={() => setHover(true)}
     >
