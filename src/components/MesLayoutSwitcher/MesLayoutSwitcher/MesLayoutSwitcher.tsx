@@ -31,10 +31,10 @@ import MesLayoutContext from "../../MesLayouts/MesLayoutContext/MesLayoutContext
 interface ILayoutProps {
   open: boolean;
   handleClose?: Dispatch<SetStateAction<boolean>> | any;
-  to?:string
+  isHome?:boolean
 }
 
-const MesLayoutSwitcher: FC<ILayoutProps> = ({ open, handleClose,to }) => {
+const MesLayoutSwitcher: FC<ILayoutProps> = ({ open, handleClose ,isHome}) => {
   const {currentLayout,setCurrentLayout}=useContext(MesLayoutContext);
   const [close, setClose] = useState(false);
   const [layoutSlider, setLayoutSlider] = useState(1);
@@ -116,8 +116,9 @@ const MesLayoutSwitcher: FC<ILayoutProps> = ({ open, handleClose,to }) => {
           >
             {layoutSlider === 1 ? (
               <>
-                <MesLayoutButton name="Layout 1" onClick={()=>{
+                <MesLayoutButton name="Layout 1"  onClick={()=>{
                   setCurrentLayout("1")
+                  isHome=true
                 }}>
                   <MesLayout1 />
                 </MesLayoutButton>
