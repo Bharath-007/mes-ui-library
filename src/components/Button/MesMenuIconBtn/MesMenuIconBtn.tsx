@@ -27,7 +27,7 @@ const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home, size, to }) => {
   const [hover, setHover] = useState(false);
 
   return (
-    <Link to={to ?? "/"}>
+    // <Link to={to ?? "/"}>
       <IconButton
         style={{
           width: `${size ?? "40px"}`,
@@ -79,7 +79,7 @@ const MesMenuIconBtn: FC<IProps> = ({ icon, sx, hovered, home, size, to }) => {
       >
         {hover ? hovered : icon}
       </IconButton>
-    </Link>
+    // </Link>
   );
 };
 
