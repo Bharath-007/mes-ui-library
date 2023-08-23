@@ -7,7 +7,7 @@ type ILayoutContext = {
   }
 
   const IUserContextState = {
-    currentLayout:'1',
+    currentLayout:'0',
     setCurrentLayout:() => {},
   }
 

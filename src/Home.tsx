@@ -30,80 +30,84 @@ import HomeInfoIcon from "./Assets/HomeInfo.svg";
 import HomeNotificationIcon from "./Assets/HomeNotification.svg";
 import HomeSettingsIcon from "./Assets/HomeSettings.svg";
 import {
-    MesInfo,
-    MesNotification,
-    MesSettings,
-    MesProfile,
-    MesIconButtonHolder,
-  } from "./components";
+  MesInfo,
+  MesNotification,
+  MesSettings,
+  MesProfile,
+  MesIconButtonHolder,
+} from "./components";
+import MesDefaultLayout from "./components/MesLayouts/MesDefaultLayout/MesDefaultLayout";
 
 const Home = () => {
-    return (
-      <MesHome>
-        {/* TitleBar Components */}
-        <MesHomeHeader
-          version="Mes X.0"
-          profileSrc={Dp1}
-          profileStyle={{
-            mt: "10px",
-            ml: "16.2px",
-          }}
-        >
-          <MesInfo icon={<HomeInfoIcon />} sx={{ mt: "5.9px" }} />
-          {/* <MesNotification icon={<MesNotification />} sx={{ mt: "5.9px" }} /> */}
-          <MesSettings icon={<HomeSettingsIcon />} sx={{ mt: "5.9px" }} />
-        </MesHomeHeader>
-        {/* Modules Components */}
-        {/* Mes Modules */}
-        <MesModules>
-          <MesModuleButton
-            icon={<HomeMasterData />}
-            hoverIcon={<HomeMasterDataHovered />}
-          >
-            Master Data
-          </MesModuleButton>
-          <MesModuleButton
-            icon={<HomeSecurity />}
-            hoverIcon={<HomeSecurityHovered />}
-          >
-            Security
-          </MesModuleButton>
-          <MesModuleButton icon={<HomeIM />} hoverIcon={<HomeIMHovered />}>
-            Integration Manager
-          </MesModuleButton>
-          <MesModuleButton icon={<HomeIIOT />} hoverIcon={<HomeIIOTHovered />}>
-            IIoT Manager
-          </MesModuleButton>
-          <MesModuleButton icon={<HomeFM />} hoverIcon={<HomeFMHovered />}>
-            Flow Manager
-          </MesModuleButton>
-          <MesModuleButton
-            icon={<HomeDashboardBuilder />}
-            hoverIcon={<HomeDashboardBuilderHovered />}
-          >
-            Dashboard Builder
-          </MesModuleButton>
-          <MesModuleButton icon={<HomeARM />} hoverIcon={<HomeARMHovered />}>
-            AR Manager
-          </MesModuleButton>
-          <MesModuleButton icon={<HomeLM />} hoverIcon={<HomeLMHovered />}>
-            License Manager
-          </MesModuleButton>
-        </MesModules>
-        {/* Mes Quick links */}
-        <MesQuiklinks>
-          <MesQuicklinkButton>API Event Viewer</MesQuicklinkButton>
-          <MesQuicklinkButton>CRON Jobs</MesQuicklinkButton>
-          <MesQuicklinkButton>User accounts</MesQuicklinkButton>
-        </MesQuiklinks>
-        {/* Mes Privacy Policy */}
-        <MesPrivacyPolicy />
-        {/* Mes FAQ */}
-        <MesFAQ />
-        {/* Mes Support */}
-        <MesSupport />
-      </MesHome>
-    );
-  };
+  return (
+    // <MesDefaultLayout>
+    //   <MesHome>
+    //     {/* TitleBar Components */}
+    //     <MesHomeHeader
+    //       version="Mes X.0"
+    //       profileSrc={Dp1}
+    //       profileStyle={{
+    //         mt: "10px",
+    //         ml: "16.2px",
+    //       }}
+    //     >
+    //       <MesInfo icon={<HomeInfoIcon />} sx={{ mt: "5.9px" }} />
+    //       {/* <MesNotification icon={<MesNotification />} sx={{ mt: "5.9px" }} /> */}
+    //       <MesSettings icon={<HomeSettingsIcon />} sx={{ mt: "5.9px" }} />
+    //     </MesHomeHeader>
+    //     {/* Modules Components */}
+    //     {/* Mes Modules */}
+    //     <MesModules>
+    //       <MesModuleButton
+    //         icon={<HomeMasterData />}
+    //         hoverIcon={<HomeMasterDataHovered />}
+    //       >
+    //         Master Data
+    //       </MesModuleButton>
+    //       <MesModuleButton
+    //         icon={<HomeSecurity />}
+    //         hoverIcon={<HomeSecurityHovered />}
+    //       >
+    //         Security
+    //       </MesModuleButton>
+    //       <MesModuleButton icon={<HomeIM />} hoverIcon={<HomeIMHovered />}>
+    //         Integration Manager
+    //       </MesModuleButton>
+    //       <MesModuleButton icon={<HomeIIOT />} hoverIcon={<HomeIIOTHovered />}>
+    //         IIoT Manager
+    //       </MesModuleButton>
+    //       <MesModuleButton icon={<HomeFM />} hoverIcon={<HomeFMHovered />}>
+    //         Flow Manager
+    //       </MesModuleButton>
+    //       <MesModuleButton
+    //         icon={<HomeDashboardBuilder />}
+    //         hoverIcon={<HomeDashboardBuilderHovered />}
+    //       >
+    //         Dashboard Builder
+    //       </MesModuleButton>
+    //       <MesModuleButton icon={<HomeARM />} hoverIcon={<HomeARMHovered />}>
+    //         AR Manager
+    //       </MesModuleButton>
+    //       <MesModuleButton icon={<HomeLM />} hoverIcon={<HomeLMHovered />}>
+    //         License Manager
+    //       </MesModuleButton>
+    //     </MesModules>
+    //     {/* Mes Quick links */}
+    //     <MesQuiklinks>
+    //       <MesQuicklinkButton>API Event Viewer</MesQuicklinkButton>
+    //       <MesQuicklinkButton>CRON Jobs</MesQuicklinkButton>
+    //       <MesQuicklinkButton>User accounts</MesQuicklinkButton>
+    //     </MesQuiklinks>
+    //     {/* Mes Privacy Policy */}
+    //     <MesPrivacyPolicy />
+    //     {/* Mes FAQ */}
+    //     <MesFAQ />
+    //     {/* Mes Support */}
+    //     <MesSupport />
+    //   </MesHome>
+    // </MesDefaultLayout>
+    <>Home</>
+  );
+};
 
-export default Home
+export default Home;

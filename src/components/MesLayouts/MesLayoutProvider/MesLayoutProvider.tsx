@@ -5,6 +5,8 @@ import MesLayout3 from "../MesLayout3/MesLayout3";
 import MesLayout4 from "../MesLayout4/MesLayout4";
 import MesLayout5 from "../MesLayout5/MesLayout5";
 import MesLayoutContext from "../MesLayoutContext/MesLayoutContext";
+import MesDefaultLayout from "../MesDefaultLayout/MesDefaultLayout";
+import { MesHome } from "../../Home";
 
 
 interface Layout{
@@ -13,7 +15,7 @@ interface Layout{
 
 
 const MesLayoutProvider: FC<Layout> = ({ children }) => {
-  const [currentLayout, setCurrentLayout] = useState<string | any>('1');
+  const [currentLayout, setCurrentLayout] = useState<string | any>('0');
 
   useEffect(() => {
     // console.log(currentLayout);
@@ -21,6 +23,7 @@ const MesLayoutProvider: FC<Layout> = ({ children }) => {
   
   return (
     <MesLayoutContext.Provider value={{currentLayout,setCurrentLayout}}>
+    {currentLayout === '0'&&<MesDefaultLayout>{children}</MesDefaultLayout>}
     {currentLayout === '1' && <MesLayout1>{children}</MesLayout1>}
     {currentLayout === '2' && <MesLayout2>{children}</MesLayout2>}
     {/* {currentLayout === '3' && <MesLayout3>{children}</MesLayout3>}
