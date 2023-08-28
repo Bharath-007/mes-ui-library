@@ -146,13 +146,22 @@ function MesDropDown(props: any) {
           // sx={props.value ? borderLess : null}
           sx={touched || (props.value !== "" && borderLess)}
         >
-          {props.options.map((item: any) => (
+          {/* {props.options.map((item: any) => (
             <MenuItemList
               key={item.value}
               value={item.value}
               checked={props.value === item.value}
             >
               {item.name}
+            </MenuItemList>
+          ))} */}
+          {props.options.map((item: any) => (
+            <MenuItemList
+              key={item.value}
+              value={item.value}
+              checked={props.value === item.value}
+            >
+              {item.ProjectName}
             </MenuItemList>
           ))}
         </CustomSelect>
