@@ -18,7 +18,6 @@ const CustomMesTextField = styled(TextField)({
     fontWeight: 400,
     lineHeight: "18px",
     fontStyle: "normal",
-    textTransform: "capitalize",
     color: "#000",
     letterSpacing: "1px",
     fontFamily: "Segoe UI",
