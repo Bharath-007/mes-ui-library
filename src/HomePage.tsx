@@ -113,18 +113,6 @@ export default HomePage;
 
 const HomePageBackup = () => {
   return (
-    <Stack m={2}>
-      <Box>
-        <input type="number"/>
-      </Box>
-    </Stack>
-  );
-};
-
-export default HomePage;
-
-const HomePageBackup = () => {
-  return (
     <>
       <MesLayoutProvider>
         <MesDefaultLayout>

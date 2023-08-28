@@ -161,7 +161,7 @@ function MesDropDown(props: any) {
               value={item.value}
               checked={props.value === item.value}
             >
-              {item.ProjectName}
+              {item.name}
             </MenuItemList>
           ))}
         </CustomSelect>
