@@ -66,7 +66,7 @@ const MesTextField = (props: any) => {
       inputProps={{
         style: {
           paddingInlineStart: "17px",
-          paddingInlineEnd: props.paddingEnd ? props.paddingEnd : "55px",
+          paddingInlineEnd: props.paddingend ?props.paddingend:"55px",
           fontFamily: "Segoe UI",
           // color: "#A9A9A9",
           letterSpacing: "1px",
